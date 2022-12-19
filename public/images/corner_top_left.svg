@@ -1,0 +1,5 @@
+<svg width="300" height="300" data-name="corner-top-left" xmlns="http://www.w3.org/2000/svg"
+  style="pointer-events:none">
+  <path fill="#ec4899"
+    d="M8 0h292l-20 20H25a5 5 0 0 0-5 5v255L0 300V8a8 8 0 0 1 8-8Z" />
+</svg>
