@@ -1,12 +1,15 @@
 import NextImage from "next/image";
-import { Navigation } from "../components";
+
+import { FaGithubSquare, FaLinkedin, FaDribbbleSquare } from "react-icons/fa";
 
 const HomePage = () => {
   return (
-    <>
-      <div className="w-full flex flex-col-reverse md:flex-row py-4 items-center gap-10">
+    <div className="h-full w-full flex flex-col gap-8 items-center justify-center">
+      <div className="w-full flex flex-col-reverse md:flex-row py-4 items-center gap-20">
         <div className="w-full md:w-[50%] h-full flex flex-col gap-8 ">
-          <h1 className="text-4xl font-semibold">Welcome.</h1>
+          <h1 className="text-4xl font-semibold">
+            Hello, I'm Rodgers M Gitau.
+          </h1>
           <div className="flex flex-col gap-8 text-lg text-gray-400">
             <p>
               I'm a front-end developer based in Nairobi, Kenya. For the past 7+
@@ -34,24 +37,33 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-full flex flex-col justify-center gap-8">
-        <h1 className="w-full text-2xl font-semibold">Projects.</h1>
-        <ul className="flex flex-col gap-3 p-4 list-disc">
-          <li className="hover:underline hover:underline-offset-8 hover:text-pink-500 cursor-pointer  hover:scale-105 hover:translate-x-4 transition-all">
-            Talent & Relationship Management
-          </li>
-          <li className="hover:underline hover:underline-offset-8 hover:text-pink-500 cursor-pointer  hover:scale-105 hover:translate-x-4 transition-all">
-            Mzizi Design System
-          </li>
-          <li className="hover:underline hover:underline-offset-8 hover:text-pink-500 cursor-pointer  hover:scale-105 hover:translate-x-4 transition-all">
-            Ostroffe Butchery
-          </li>
-          <li className="hover:underline hover:underline-offset-8 hover:text-pink-500 cursor-pointer  hover:scale-105 hover:translate-x-4 transition-all">
-            Me-Chat
-          </li>
-        </ul>
+      <div className="w-full h-full flex items-center gap-8">
+        <a
+          href="/"
+          title="Github"
+          aria-label="github profile"
+          className="w-12 h-12 hover:text-pink-500 transition-all ease-out hover:translate-y-1"
+        >
+          <FaGithubSquare className="w-full h-full rounded-md" />
+        </a>
+        <a
+          href="/"
+          title="LinkedIn"
+          aria-label="linked in profile"
+          className="w-12 h-12 hover:text-pink-500 transition-all ease-out hover:translate-y-1"
+        >
+          <FaLinkedin className="w-full h-full rounded-md" />
+        </a>
+        <a
+          href="/"
+          title="Dribbble"
+          aria-label="dribbble profile"
+          className="w-12 h-12 hover:text-pink-500 transition-all ease-out hover:translate-y-1"
+        >
+          <FaDribbbleSquare className="w-full h-full rounded-md" />
+        </a>
       </div>
-    </>
+    </div>
   );
 };
 
