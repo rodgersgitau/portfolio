@@ -13,8 +13,8 @@ export default function RootLayout({
     <html>
       <head />
       <body className="m-0 p-0 box-content">
-        <section className="min-h-screen h-max p-8 bg-[#1d1d20] text-gray-100 flex items-center relative">
-          <div className="h-full relative container mx-auto p-8">
+        <section className="min-h-screen h-max p-8 bg-[#1d1d20] text-gray-100 relative">
+          <div className="h-full relative container mx-auto flex flex-col gap-10 px-8">
             <div className="absolute top-0 left-0 z-10 ">
               <NextImage
                 alt=""
@@ -24,7 +24,7 @@ export default function RootLayout({
                 className="inline-block h-12 w-12 text-purple-500 stroke-current"
               />
             </div>
-            <div className="absolute right-0 bottom-0 z-10 text-pink-500">
+            <div className="absolute right-0 -bottom-8 z-10 text-pink-500">
               <NextImage
                 alt=""
                 width={100}
@@ -34,8 +34,13 @@ export default function RootLayout({
               />
             </div>
             <Navigation />
-            {children}
+            <div className="min-h-[70vh]">{children}</div>
           </div>
+          <footer className="container mx-auto flex flex-col md:flex-row md:items-center gap-20">
+            <p className="text-slate-200 ">&copy; Copyright 2022</p>
+            <p className="text-slate-200 ">Tel: +254 711408297</p>
+            <p className="text-slate-200 ">Email: rodgersgitau@gmail.com</p>
+          </footer>
         </section>
       </body>
     </html>
