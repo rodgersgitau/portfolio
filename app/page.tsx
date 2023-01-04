@@ -12,7 +12,7 @@ const HomePage = () => {
           </h1>
           <div className="flex flex-col gap-8 text-lg text-gray-400">
             <p>
-              I'm a front-end developer based in Nairobi, Kenya. For the past 7+
+              I'm a front-end developer based in Nairobi, Kenya. For the past 5+
               years, I've designed, developed & shipped all sorts of web
               applications for a myriad of industries i.e hospitality, real
               estate, ecommerce & healthcare

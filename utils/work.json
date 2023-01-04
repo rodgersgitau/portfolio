@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Ostroffe Butchery",
+    "description": "An ecommerce web application for a local butchery. Includes mini-CMS for authorized editing of products, categories & prices.",
+    "techStack": ["NextJs", "React", "Stripe", "TailwindCSS"],
+    "images": [
+      "/images/ostroffe-butchery/homepage.png",
+      "/images/ostroffe-butchery/categories.png",
+      "/images/ostroffe-butchery/itempage.png",
+      "/images/ostroffe-butchery/cartpage.png",
+      "/images/ostroffe-butchery/alert.png"
+    ]
+  },
+  {
+    "name": "Safi Gas Limited",
+    "description": "A web application for local gas retailer. Includes mini-CMS for authorized editing of products, categories & prices. ",
+    "techStack": ["React", "Stripe", "MUI", "Google Maps"],
+    "images": [
+      "/images/ostroffe-butchery/homepage.png",
+      "/images/ostroffe-butchery/categories.png",
+      "/images/ostroffe-butchery/itempage.png",
+      "/images/ostroffe-butchery/cartpage.png",
+      "/images/ostroffe-butchery/alert.png"
+    ]
+  },
+  {
+    "name": "Sweet Title Limited",
+    "description": "A web application for local land retailer. Includes mini-CMS for authorized editing of products, categories & prices. ",
+    "techStack": ["React", "Stripe", "MUI", "Google Maps"],
+    "images": [
+      "/images/ostroffe-butchery/homepage.png",
+      "/images/ostroffe-butchery/categories.png",
+      "/images/ostroffe-butchery/itempage.png",
+      "/images/ostroffe-butchery/cartpage.png",
+      "/images/ostroffe-butchery/alert.png"
+    ]
+  },
+  {
+    "name": "Wholelife",
+    "description": "A task management app. Includes mini-CMS for authorized editing of products, categories & prices. ",
+    "techStack": ["React", "Stripe", "MUI", "Google Maps"],
+    "images": [
+      "/images/ostroffe-butchery/homepage.png",
+      "/images/ostroffe-butchery/categories.png",
+      "/images/ostroffe-butchery/itempage.png",
+      "/images/ostroffe-butchery/cartpage.png",
+      "/images/ostroffe-butchery/alert.png"
+    ]
+  }
+]
