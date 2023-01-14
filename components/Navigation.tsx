@@ -1,4 +1,5 @@
 import NextImage from "next/image";
+import Link from "next/link";
 
 const Navigation = () => {
   return (
@@ -43,9 +44,11 @@ const Navigation = () => {
         </a>
       </div>
       <div className="hidden md:flex md:items-center">
-        <button className="px-4 py-3 rounded-md bg-pink-100 text-pink-800 hover:bg-pink-500 hover:text-white capitalize font-semibold transition-all ease-out hover:translate-y-1">
-          Let's Talk
-        </button>
+        <Link href="/contact">
+          <span className="px-4 py-3 rounded-md bg-pink-100 text-pink-800 hover:bg-pink-500 hover:text-white capitalize font-semibold transition-all ease-out hover:translate-y-1">
+            Let's Talk
+          </span>
+        </Link>
       </div>
     </nav>
   );
