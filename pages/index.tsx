@@ -1,16 +1,18 @@
+import React from "react";
 import NextImage from "next/image";
 
-import { FaGithubSquare, FaLinkedin, FaDribbbleSquare } from "react-icons/fa";
+import { FiCodesandbox } from "react-icons/fi";
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 const HomePage = () => {
   return (
     <div className="h-full w-full flex flex-col gap-8 items-center justify-center">
       <div className="w-full flex flex-col-reverse md:flex-row py-4 items-center gap-20">
         <div className="w-full md:w-[50%] h-full flex flex-col gap-8 ">
-          <h1 className="text-4xl font-semibold">
+          <h1 className="text-3xl font-semibold">
             Hello, I'm Rodgers M Gitau.
           </h1>
-          <div className="flex flex-col gap-8 text-lg text-gray-400">
+          <div className="flex flex-col gap-8 text-lg text-gray-800 dark:text-gray-400">
             <p>
               I'm a front-end developer based in Nairobi, Kenya. For the past 5+
               years, I've designed, developed & shipped all sorts of web
@@ -39,28 +41,29 @@ const HomePage = () => {
       </div>
       <div className="w-full h-full flex items-center gap-8">
         <a
-          href="/"
           title="Github"
           aria-label="github profile"
+          referrerPolicy="no-referrer"
+          href="https://github.com/rodgersgitau"
           className="w-12 h-12 hover:text-pink-500 transition-all ease-out hover:translate-y-1"
         >
           <FaGithubSquare className="w-full h-full rounded-md" />
         </a>
         <a
-          href="/"
           title="LinkedIn"
           aria-label="linked in profile"
+          href="https://www.linkedin.com/in/rodgersgitau"
           className="w-12 h-12 hover:text-pink-500 transition-all ease-out hover:translate-y-1"
         >
           <FaLinkedin className="w-full h-full rounded-md" />
         </a>
         <a
-          href="/"
-          title="Dribbble"
-          aria-label="dribbble profile"
+          title="Code Sandbox"
+          aria-label="code sandbox profile"
+          href="https://codesandbox.io/u/rodgersgitau"
           className="w-12 h-12 hover:text-pink-500 transition-all ease-out hover:translate-y-1"
         >
-          <FaDribbbleSquare className="w-full h-full rounded-md" />
+          <FiCodesandbox className="w-full h-full rounded-md" />
         </a>
       </div>
     </div>
