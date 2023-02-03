@@ -1,6 +1,16 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+
+interface MessageType {
+  type: "info" | "success" | "error";
+  text: string;
+}
 
 const ContactPage = () => {
+  const [message, setMessage] = useState<MessageType | undefined>({
+    type: "info",
+    text: "Successfully sent message",
+  });
+
   const inputs = useMemo(() => {
     return [
       {
@@ -38,7 +48,38 @@ const ContactPage = () => {
       <h1 className="font-black text-xl text-black dark:text-gray-400">
         Leave some details and I will reach out ...
       </h1>
-      <form className="my-8 w-full h-full grid grid-cols-2 gap-10">
+      {message && (
+        <div
+          className={`${alertStyling(
+            message.type
+          )} w-full px-4 py-2.5 flex items-center gap-8 rounded-md`}
+        >
+          <p className="flex-1 text-sm font-semibold ">{message.text}</p>
+          <button
+            onClick={() => setMessage(undefined)}
+            className="text-lg bg-transparent font-semibold"
+          >
+            x
+          </button>
+        </div>
+      )}
+      <form
+        method="POST"
+        data-netlify="true"
+        onSubmit={() =>
+          setMessage({
+            type: "success",
+            text: "Successfully sent message",
+          })
+        }
+        onError={(error) =>
+          setMessage({
+            type: "error",
+            text: `${error}`,
+          })
+        }
+        className="my-8 w-full h-full grid grid-cols-2 gap-10"
+      >
         {inputs.map(({ name, label, required, ...rest }) => {
           return (
             <div
@@ -90,4 +131,16 @@ const ContactPage = () => {
     </div>
   );
 };
+
+const alertStyling = (type: MessageType["type"]) => {
+  switch (type) {
+    case "error":
+      return "bg-pink-100 text-pink-900";
+    case "success":
+      return "bg-emerald-100 text-emerald-900";
+    default:
+      return "bg-purpleGray text-black";
+  }
+};
+
 export default ContactPage;
