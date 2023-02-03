@@ -6,9 +6,10 @@ export const Navigation = () => {
   const routes = useMemo(
     () => [
       { path: "/", pathname: "About" },
-      { path: "/work", pathname: "Work" },
-      { path: "/play", pathname: "Play" },
-      { path: "/notes", pathname: "Notes" },
+      { path: "/contact", pathname: "Contact" },
+      // { path: "/work", pathname: "Work" },
+      // { path: "/play", pathname: "Play" },
+      // { path: "/notes", pathname: "Notes" },
     ],
     []
   );
