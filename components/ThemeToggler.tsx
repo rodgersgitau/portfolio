@@ -4,22 +4,17 @@ import { useTheme } from "next-themes";
 import { FC, useEffect, useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 
-export type ThemeType = "dark" | "light";
-
-export interface ThemeTogglerType {
-  defaultTheme?: ThemeType;
-}
-
-export const ThemeToggler: FC<ThemeTogglerType> = ({
-  defaultTheme = "light",
-}) => {
+export const ThemeToggler: FC = () => {
   const { theme, setTheme } = useTheme();
 
-  // useEffect(() => {
-  //   if (defaultTheme) {
-  //     setTheme(defaultTheme);
-  //   }
-  // }, [defaultTheme, setTheme]);
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      void setTheme("dark");
+    }
+  }, []);
 
   return (
     <button

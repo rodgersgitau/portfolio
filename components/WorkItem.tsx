@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useCallback } from "react";
 import { FiCornerDownRight } from "react-icons/fi";
 
 export interface WorkItemProps {
@@ -14,9 +15,30 @@ export const WorkItem = ({
   techStack,
   images,
 }: WorkItemProps) => {
+  const getSlug = useCallback((name: string) => {
+    return name
+      .toString()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "")
+      .replace(/--+/g, "-");
+  }, []);
+
   return (
-    <div className="group bg-transparent min-w-[15rem] min-h-[15rem] md:min-w-[25rem] md:min-h-[25rem] relative rounded-md">
-      <Image src={images[0]} alt={name} fill={true} className="rounded-md" />
+    <a
+      href={`/work/${getSlug(name)}`}
+      className="group w-full min-w-[15rem] h-[20rem] bg-purpleGray relative rounded-md"
+    >
+      <Image
+        alt={name}
+        fill={true}
+        src={images[0]}
+        loading="eager"
+        className="object-fill rounded-tl-md rounded-tr-md"
+      />
 
       <div className="hidden group-hover:block absolute transition-all duration-500  h-full w-full p-8 opacity-95 bg-neutral-800">
         <div className="flex flex-col gap-8 shadow-md shadow-neutral-800 h-max bg-black p-4 rounded-md">
@@ -36,15 +58,6 @@ export const WorkItem = ({
           </div>
         </div>
       </div>
-
-      <div className="hidden group-hover:block absolute right-8 bottom-8">
-        <button className="py-1.5 px-2 rounded-md bg-neutral-200 text-neutral-800">
-          <div className="flex items-center gap-2">
-            <FiCornerDownRight />
-            <span className="font-semibold ">View Case</span>
-          </div>
-        </button>
-      </div>
-    </div>
+    </a>
   );
 };
