@@ -1,7 +1,7 @@
 "use client";
 
+import { FC, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { FC, useEffect, useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 
 export const ThemeToggler: FC = () => {
@@ -9,10 +9,12 @@ export const ThemeToggler: FC = () => {
 
   useEffect(() => {
     if (
-      typeof window !== "undefined" &&
+      !localStorage.getItem("theme") &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
       void setTheme("dark");
+    } else if (localStorage.getItem("theme")) {
+      void setTheme(localStorage.getItem("theme") || "light");
     }
   }, []);
 
