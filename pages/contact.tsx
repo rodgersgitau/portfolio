@@ -6,10 +6,7 @@ interface MessageType {
 }
 
 const ContactPage = () => {
-  const [message, setMessage] = useState<MessageType | undefined>({
-    type: "info",
-    text: "Successfully sent message",
-  });
+  const [message, setMessage] = useState<MessageType | undefined>(undefined);
 
   const inputs = useMemo(() => {
     return [

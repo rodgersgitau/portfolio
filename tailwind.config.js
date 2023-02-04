@@ -15,6 +15,7 @@ module.exports = {
       },
       backgroundImage: {
         "ascii-pattern": "url('/images/ascii-pattern.svg')",
+        "beehive-pattern": "url('/images/beehive-pattern.svg')",
       },
       gridTemplateColumns: {
         "fit-25": "repeat(auto-fit, minmax(25rem, 1fr))",

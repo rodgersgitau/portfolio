@@ -7,7 +7,7 @@ import { FaFilePdf, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 const HomePage = () => {
   return (
     <div className="h-full w-full flex flex-col gap-8 items-center justify-center">
-      <div className="w-full flex flex-col-reverse lg:flex-row py-4 items-center gap-20">
+      <div className="w-full flex flex-col-reverse lg:flex-row py-4 items-center gap-40">
         <div className="w-full lg:w-[50%] h-full flex flex-col gap-8 ">
           <h1 className="text-3xl font-semibold flex gap-4 items-center">
             <span>Hello, I'm</span>
@@ -32,53 +32,57 @@ const HomePage = () => {
         </div>
 
         <div className="w-full md:w-[50vw] h-full flex items-center justify-center gap-8">
-          <div className="z-10 h-max w-max relative">
-            <div className="absolute top-0 bottom-0 left-0 right-0 rounded-md border-2 border-black dark:border-purpleGray" />
+          <div className="z-10 h-max w-max relative -inset-1 -skew-y-2">
+            <div className="absolute top-0 bottom-0 left-0 right-0 -z-10 translate-x-8 translate-y-8 rounded-lg border-2 border-black dark:border-purpleGray" />
             <NextImage
               alt=""
               width={380}
               height={760}
               loading="eager"
               src="/images/me.jpg"
-              className="-translate-x-8 -translate-y-8 object-cover rounded-md shadow-inner shadow-black dark:shadow-purpleGray "
+              className="object-cover rounded-lg shadow-inner shadow-black dark:shadow-purpleGray "
             />
           </div>
         </div>
       </div>
-      <div className="w-full h-full flex items-center gap-8">
+      <div className="w-full h-full flex items-center gap-12">
         <a
           title="Github"
           aria-label="github profile"
           referrerPolicy="no-referrer"
           href="https://github.com/rodgersgitau"
-          className="w-12 h-12 hover:text-pink-600 transition-all ease-out hover:translate-y-1"
+          className=" flex flex-col justify-center items-center gap-4 text-center hover:text-pink-600 transition-all ease-out hover:-translate-y-2"
         >
-          <FaGithubSquare className="w-full h-full rounded-md" />
+          <FaGithubSquare className="w-12 h-12 rounded-md" />
+          <p className="flex-1 text-sm">Github</p>
         </a>
         <a
           title="LinkedIn"
           aria-label="linked in profile"
           href="https://www.linkedin.com/in/rodgersgitau"
-          className="w-12 h-12 hover:text-pink-600 transition-all ease-out hover:translate-y-1"
+          className=" flex flex-col justify-center items-center gap-4 text-center hover:text-pink-600 transition-all ease-out hover:-translate-y-2"
         >
-          <FaLinkedin className="w-full h-full rounded-md" />
+          <FaLinkedin className="w-12 h-12 rounded-md" />
+          <p className="flex-1 text-sm">LinkedIn</p>
         </a>
         <a
           title="Code Sandbox"
           aria-label="code sandbox profile"
           href="https://codesandbox.io/u/rodgersgitau"
-          className="w-12 h-12 hover:text-pink-600 transition-all ease-out hover:translate-y-1"
+          className=" flex flex-col justify-center items-center gap-4 text-center hover:text-pink-600 transition-all ease-out hover:-translate-y-2"
         >
-          <FiCodesandbox className="w-full h-full rounded-md" />
+          <FiCodesandbox className="w-12 h-12 rounded-md" />
+          <p className="flex-1 text-sm">CodeSandbox</p>
         </a>
         <a
           download={true}
           title="My Resume"
           aria-label="download my resume"
           href="/documents/Rodgers M Gitau CV.pdf"
-          className="w-12 h-12 hover:text-pink-600 transition-all ease-out hover:translate-y-1"
+          className=" flex flex-col justify-center items-center gap-4 text-center hover:text-pink-600 transition-all ease-out hover:-translate-y-2"
         >
-          <FaFilePdf className="w-full h-full rounded-md" />
+          <FaFilePdf className="w-12 h-12 rounded-md" />
+          <p className="flex-1 text-sm">Resume</p>
         </a>
       </div>
     </div>
