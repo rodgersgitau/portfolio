@@ -14,7 +14,7 @@ export const Navigation = () => {
     []
   );
   return (
-    <nav className="sticky l-0 t-0 h-max w-full min-h-[7rem] flex flex-col md:flex-row items-center gap-10 bg-purpleGray dark:bg-black">
+    <nav className="sticky l-0 t-0 h-max w-full min-h-[7rem] flex flex-col md:flex-row items-center gap-10 bg-whitesmoke dark:bg-black">
       <div className="flex-1 ">
         <div className="w-max flex gap-8 items-center">
           {routes.map((route) => {
@@ -22,7 +22,7 @@ export const Navigation = () => {
               <a
                 key={route.path}
                 href={route.path}
-                className="underline underline-offset-8 hover:text-pink-600  transition-all ease-out hover:translate-y-1"
+                className="font-semibold underline underline-offset-8 hover:text-pink-600  transition-all ease-out hover:translate-y-1"
               >
                 {route.pathname}
               </a>
