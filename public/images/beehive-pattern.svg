@@ -24,11 +24,11 @@
       gradientTransform="matrix(592.11914,0,0,-592.11914,6.1708984,300.91309)" spreadMethod="pad"
       id="linearGradient2167">
       <stop style="stop-opacity:1;stop-color:#ffffff" offset="0" id="stop2161" />
-      <stop style="stop-opacity:1;stop-color:#000000" offset="0.52" id="stop2163" />
+      <stop style="stop-opacity:1;stop-color:#1d1d20" offset="0.52" id="stop2163" />
       <stop style="stop-opacity:1;stop-color:#ec4899" offset="1" id="stop2165" />
     </linearGradient>
   </defs>
-  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10"
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#1d1d20" borderopacity="1" objecttolerance="10"
     gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1920"
     inkscape:window-height="1018" id="namedview2133" showgrid="false" inkscape:zoom="0.8577226" inkscape:cx="449.15254"
     inkscape:cy="423.72881" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1"

@@ -33,7 +33,7 @@ export const Navigation = () => {
       <div className="flex items-center justify-between gap-8">
         <div className="w-max">
           <Link href="/contact">
-            <span className="px-4 py-3 rounded-md bg-black text-brightGray hover:bg-pink-500 dark:bg-brightGray dark:text-black dark:hover:bg-pink-300 capitalize font-semibold transition-all ease-out hover:translate-y-1">
+            <span className="px-4 py-3 rounded-md bg-black text-brightGray dark:bg-brightGray dark:text-black hover:text-black hover:bg-pink-300 capitalize font-semibold transition-all ease-out hover:translate-y-1">
               Let's Talk
             </span>
           </Link>
