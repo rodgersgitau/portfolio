@@ -41,7 +41,7 @@ const ContactPage = () => {
     ];
   }, []);
   return (
-    <div className="w-90 md:w-[45vw] h-full mx-auto px-8 flex flex-col gap-4">
+    <div className="h-full w-90 md:w-[45vw] mx-auto flex flex-col gap-4">
       <h1 className="font-black text-xl text-black dark:text-gray-400">
         Leave some details and I will reach out ...
       </h1>
@@ -75,7 +75,7 @@ const ContactPage = () => {
             text: `${error}`,
           })
         }
-        className="my-8 w-full h-full grid grid-cols-2 gap-10"
+        className="flex-1 w-full h-full grid grid-cols-2 gap-10"
       >
         {inputs.map(({ name, label, required, ...rest }) => {
           return (
