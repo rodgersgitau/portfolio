@@ -6,7 +6,7 @@ import { FaFilePdf, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 const HomePage = () => {
   return (
-    <div className="h-full w-full flex flex-col gap-8 items-center justify-center">
+    <div className="h-full min-h-[60vh] w-full flex flex-col gap-8 items-center justify-center">
       <div className="w-full flex flex-col-reverse lg:flex-row py-4 items-center gap-40">
         <div className="w-full lg:w-[50%] h-full flex flex-col gap-8 ">
           <h1 className="text-3xl font-semibold flex gap-4 items-center">
@@ -19,9 +19,9 @@ const HomePage = () => {
           </h1>
           <div className="flex flex-col gap-8 text-lg text-gray-800 dark:text-gray-400">
             <p>
-              I'm a front-end developer based in Nairobi, Kenya. For the past 7+
-              years, I've designed, developed & shipped all sorts of web
-              applications for a myriad of industries i.e hospitality, real
+              I'm a full-stack software engineer based in Nairobi, Kenya. For
+              the past 7+ years, I've designed, developed & shipped all sorts of
+              web applications for a myriad of industries i.e hospitality, real
               estate, ecommerce & healthcare
             </p>
             <p>

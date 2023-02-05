@@ -24,9 +24,9 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <main className="w-full h-full m-0 p-0 overflow-x-hidden overflow-y-auto bg-whitesmoke text-black dark:bg-black dark:text-brightGray">
-        <section className="min-h-screen min-w-screen w-full h-full p-8 bg-beehive-pattern dark:bg-ascii-pattern bg-no-repeat bg-right-bottom relative flex flex-col gap-10">
-          <div className="container relative h-full mx-auto flex flex-col gap-8 px-2 md:px-8">
+      <main className="min-h-screen min-w-screen m-0 p-0 overflow-x-hidden overflow-y-auto bg-whitesmoke text-black dark:bg-black dark:text-brightGray">
+        <section className="w-full h-full p-8 md:bg-beehive-pattern dark:bg-ascii-pattern bg-no-repeat bg-right relative">
+          <div className="container relative h-full mx-auto  px-2 md:px-8 flex flex-col gap-10">
             <div className="hidden md:block absolute -top-4 -left-4 z-10 ">
               <NextImage
                 alt=""
@@ -48,11 +48,11 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
             <Navigation />
 
-            <div className="h-full w-full min-h-[68vh] bg-transparent">
+            <div className="flex-1 h-full w-full p-8 bg-whitesmoke text-black dark:bg-black/25 dark:text-brightGray">
               {children}
             </div>
 
-            <footer className="container mx-auto flex flex-col md:flex-row md:items-center gap-8 md:gap-20 text-black dark:text-brightGray">
+            <footer className="w-full flex flex-col md:flex-row md:items-center gap-8 md:gap-20 text-black dark:text-brightGray">
               <p>&copy; Copyright 2022</p>
               <div className="flex items-center gap-1">
                 <FaPhoneSquareAlt fontSize="1.25rem" />
