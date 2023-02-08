@@ -62,13 +62,10 @@ const ContactPage = () => {
       )}
       <form
         method="POST"
+        action="/success"
         data-netlify="true"
-        onSubmit={() =>
-          setMessage({
-            type: "success",
-            text: "Successfully sent message",
-          })
-        }
+        name="RGitauContactForm"
+        data-netlify-honeypot="bot-field"
         onError={(error) =>
           setMessage({
             type: "error",
@@ -77,6 +74,12 @@ const ContactPage = () => {
         }
         className="flex-1 w-full h-full grid grid-cols-2 gap-10"
       >
+        <p className="hidden">
+          <label id="contact-form-bot-label">
+            Don't fill this out if you're human:{" "}
+            <input name="bot-field" aria-labelledby="contact-form-bot-label" />
+          </label>
+        </p>
         {inputs.map(({ name, label, required, ...rest }) => {
           return (
             <div
