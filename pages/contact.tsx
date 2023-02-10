@@ -1,4 +1,7 @@
-import { useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
+
+const FormId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
 
 interface MessageType {
   type: "info" | "success" | "error";
@@ -6,6 +9,7 @@ interface MessageType {
 }
 
 const ContactPage = () => {
+  const [state, handleSubmit] = useForm(FormId || "");
   const [message, setMessage] = useState<MessageType | undefined>(undefined);
 
   const inputs = useMemo(() => {
@@ -21,15 +25,15 @@ const ContactPage = () => {
         type: "text",
         name: "company",
         label: "Company",
-        required: true,
+        required: false,
         placeholder: "e.g Top Brand Limited",
       },
       {
-        type: "telephone",
+        type: "tel",
         name: "phoneNumber",
         label: "Phone Number",
         required: false,
-        placeholder: "e.g +254 712345678",
+        placeholder: "e.g +254712345678",
       },
       {
         type: "email",
@@ -40,12 +44,32 @@ const ContactPage = () => {
       },
     ];
   }, []);
+
+  useEffect(() => {
+    if (state.succeeded) {
+      setMessage({
+        type: "success",
+        text: `Thank you! Your form submission have been received. I will reach out soon`,
+      });
+    } else if (state.errors.length > 0) {
+      const { code, message } = state.errors[0];
+      setMessage({
+        type: "error",
+        text: `${code}! ${message}`,
+      });
+    }
+
+    return () => {
+      setMessage(undefined);
+    };
+  }, [state.succeeded, state.errors.length]);
+
   return (
     <div className="h-full w-90 md:w-[45vw] mx-auto flex flex-col gap-4">
       <h1 className="font-black text-xl text-black dark:text-gray-400">
         Leave some details and I will reach out ...
       </h1>
-      {message && (
+      {typeof message !== "undefined" && (
         <div
           className={`${alertStyling(
             message.type
@@ -62,24 +86,16 @@ const ContactPage = () => {
       )}
       <form
         method="POST"
-        action="/success"
-        data-netlify="true"
         name="RGitauContactForm"
-        data-netlify-honeypot="bot-field"
-        onError={(error) =>
-          setMessage({
-            type: "error",
-            text: `${error}`,
-          })
-        }
+        onSubmit={handleSubmit}
         className="flex-1 w-full h-full grid grid-cols-2 gap-10"
       >
-        <p className="hidden">
+        {/* <p className="hidden">
           <label id="contact-form-bot-label">
             Don't fill this out if you're human:{" "}
             <input name="bot-field" aria-labelledby="contact-form-bot-label" />
           </label>
-        </p>
+        </p> */}
         {inputs.map(({ name, label, required, ...rest }) => {
           return (
             <div
@@ -107,6 +123,8 @@ const ContactPage = () => {
         <div className="col-span-2 relative z-0 flex flex-col-reverse gap-3 w-full group text-sm text-black dark:text-gray-400">
           <textarea
             rows={8}
+            id="message"
+            name="message"
             maxLength={300}
             placeholder="e.g I liked your portfolio and would like to discuss working on a project"
             className="p-2.5 w-full rounded-md bg-transparent placeholder:text-gray-600 dark:placeholder:text-gray-500 appearance-none border-2 border-gray-600 dark:border-gray-300 focus:border-purple-600 focus:outline-none focus:ring-0 peer"
@@ -120,6 +138,7 @@ const ContactPage = () => {
         </div>
         <button
           type="submit"
+          disabled={state.submitting}
           className="col-span-2 opacity-80 text-[#fff] bg-black dark:bg-purple-600 hover:opacity-100 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center dark:opacity-100"
         >
           Request For Callback
