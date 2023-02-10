@@ -3,7 +3,7 @@ import projects from "../../utils/work.json";
 
 const WorkPage = () => {
   return (
-    <section className="h-full w-full">
+    <section className="min-h-[60vh] h-full w-full">
       <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10">
         {projects.map((project) => (
           <WorkItem
