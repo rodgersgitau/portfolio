@@ -1,7 +1,8 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
-const FormId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+const FormId =
+  process.env.NEXT_PUBLIC_FORMSPREE_ID || process.env.NEXT_PUBLIC_FORM;
 
 interface MessageType {
   type: "info" | "success" | "error";
@@ -90,12 +91,12 @@ const ContactPage = () => {
         onSubmit={handleSubmit}
         className="flex-1 w-full h-full grid grid-cols-2 gap-10"
       >
-        {/* <p className="hidden">
+        <p className="hidden">
           <label id="contact-form-bot-label">
             Don't fill this out if you're human:{" "}
             <input name="bot-field" aria-labelledby="contact-form-bot-label" />
           </label>
-        </p> */}
+        </p>
         {inputs.map(({ name, label, required, ...rest }) => {
           return (
             <div
