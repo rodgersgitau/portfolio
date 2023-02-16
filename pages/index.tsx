@@ -1,6 +1,6 @@
 import React from "react";
-import NextImage from "next/image";
 
+import { Image } from "../components";
 import { FiCodesandbox } from "react-icons/fi";
 import { FaFilePdf, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
@@ -31,16 +31,14 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-[50vw] h-full flex items-center justify-center gap-8">
-          <div className="z-10 h-max w-max relative -inset-1 -skew-y-2">
-            <div className="absolute top-0 bottom-0 left-0 right-0 -z-10 translate-x-8 translate-y-8 rounded-lg border-2 border-black dark:border-purpleGray" />
-            <NextImage
-              alt=""
+        <div className="w-full md:w-[50vw] flex items-center justify-center gap-8">
+          <div className="z-10 relative -inset-1 -skew-y-2 transition duration-300">
+            <Image
+              shadow
               width={380}
               height={760}
-              loading="eager"
+              alt="a photo of me"
               src="/images/me.jpg"
-              className="object-cover rounded-lg shadow-inner shadow-black dark:shadow-purpleGray "
             />
           </div>
         </div>
