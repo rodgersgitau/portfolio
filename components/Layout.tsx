@@ -1,11 +1,11 @@
 "use client";
 
-import NextImage from "next/image";
 import { ThemeProvider } from "next-themes";
+import NextImage from "next/image";
 import { FC, ReactNode, useEffect, useState } from "react";
+import { FaEnvelopeSquare, FaPhoneSquareAlt } from "react-icons/fa";
 
 import { Navigation } from "../components";
-import { FaEnvelopeSquare, FaPhoneSquareAlt } from "react-icons/fa";
 
 export interface LayoutProps {
   children: ReactNode;
@@ -24,35 +24,35 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <main className="min-h-screen min-w-screen h-full m-0 p-0 overflow-x-hidden overflow-y-auto text-black dark:bg-black dark:text-brightGray ">
-        <section className="w-full h-full p-8 relative bg-ascii-pattern-dark dark:bg-ascii-pattern bg-no-repeat bg-right bg-blend-overlay">
-          <div className="container relative h-full mx-auto  px-2 md:px-8 flex flex-col gap-10">
-            <div className="hidden md:block absolute -top-4 -left-4 z-10 ">
+      <main className="h-full min-h-screen p-0 m-0 overflow-x-hidden overflow-y-auto text-black min-w-screen dark:bg-black dark:text-brightGray ">
+        <section className="relative w-full h-full p-8 bg-right bg-no-repeat bg-ascii-pattern-dark dark:bg-ascii-pattern bg-blend-overlay">
+          <div className="container relative flex flex-col h-full gap-10 px-2 mx-auto md:px-8">
+            <div className="absolute z-10 hidden md:block -top-4 -left-4 ">
               <NextImage
                 alt=""
                 width={100}
                 height={100}
                 src="/images/corner_top_left.svg"
-                className="inline-block h-12 w-12 text-blue-500 dark:text-pink-600 fill-current"
+                className="inline-block w-12 h-12 text-blue-500 fill-current dark:text-pink-600"
               />
             </div>
-            <div className=" hidden md:block absolute -bottom-4 -right-4 z-10 text-pink-600">
+            <div className="absolute z-10 hidden text-pink-600  md:block -bottom-4 -right-4">
               <NextImage
                 alt=""
                 width={100}
                 height={100}
                 src="/images/corner_bottom_right.svg"
-                className="inline-block h-12 w-12 text-blue-500 dark:text-pink-600 fill-current"
+                className="inline-block w-12 h-12 text-blue-500 fill-current dark:text-pink-600"
               />
             </div>
 
             <Navigation />
 
-            <div className="flex-1 h-full w-full p-8 bg-whitesmoke text-black dark:bg-black/25 dark:text-brightGray">
+            <div className="flex-1 w-full h-full p-8 text-black bg-whitesmoke dark:bg-black/25 dark:text-brightGray">
               {children}
             </div>
 
-            <footer className="w-full flex flex-col md:flex-row md:items-center gap-8 md:gap-20 text-black dark:text-brightGray">
+            <footer className="flex flex-col w-full gap-8 text-black md:flex-row md:items-center md:gap-20 dark:text-brightGray">
               <p>&copy; Copyright 2022</p>
               <div className="flex items-center gap-1">
                 <FaPhoneSquareAlt fontSize="1.25rem" />

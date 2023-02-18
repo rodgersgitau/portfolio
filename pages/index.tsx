@@ -1,17 +1,16 @@
-import React from "react";
+import { FaFilePdf, FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { FiCodesandbox } from "react-icons/fi";
 
 import { Image } from "../components";
-import { FiCodesandbox } from "react-icons/fi";
-import { FaFilePdf, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 const HomePage = () => {
   return (
     <div className="h-full min-h-[60vh] w-full flex flex-col gap-8 items-center justify-center">
-      <div className="w-full flex flex-col-reverse lg:flex-row py-4 items-center gap-40">
+      <div className="flex flex-col-reverse items-center w-full gap-40 py-4 lg:flex-row">
         <div className="w-full lg:w-[50%] h-full flex flex-col gap-8 ">
-          <h1 className="text-3xl font-semibold flex gap-4 items-center">
+          <h1 className="flex items-center gap-4 text-3xl font-semibold">
             <span>Hello, I'm</span>
-            <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:dark:bg-pink-500 relative inline-block p-1 px-2 before:rounded-md">
+            <span className="relative inline-block p-1 px-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:dark:bg-pink-500 before:rounded-md">
               <span className="relative mx-auto text-brightGray">
                 Rodgers M Gitau
               </span>
@@ -32,7 +31,7 @@ const HomePage = () => {
         </div>
 
         <div className="w-full md:w-[50vw] flex items-center justify-center gap-8">
-          <div className="z-10 relative -inset-1 -skew-y-2 transition duration-300">
+          <div className="relative z-10 transition duration-300 -inset-1 -skew-y-2">
             <Image
               shadow
               width={380}
@@ -43,13 +42,13 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-full flex items-center gap-12">
+      <div className="flex items-center w-full h-full gap-12">
         <a
           title="Github"
           aria-label="github profile"
           referrerPolicy="no-referrer"
           href="https://github.com/rodgersgitau"
-          className=" flex flex-col justify-center items-center gap-4 text-center hover:text-pink-600 transition-all ease-out hover:-translate-y-2"
+          className="flex flex-col items-center justify-center gap-4 text-center transition-all ease-out hover:text-pink-600 hover:-translate-y-2"
         >
           <FaGithubSquare className="w-12 h-12 rounded-md" />
           <p className="flex-1 text-sm">Github</p>
@@ -58,7 +57,7 @@ const HomePage = () => {
           title="LinkedIn"
           aria-label="linked in profile"
           href="https://www.linkedin.com/in/rodgersgitau"
-          className=" flex flex-col justify-center items-center gap-4 text-center hover:text-pink-600 transition-all ease-out hover:-translate-y-2"
+          className="flex flex-col items-center justify-center gap-4 text-center transition-all ease-out hover:text-pink-600 hover:-translate-y-2"
         >
           <FaLinkedin className="w-12 h-12 rounded-md" />
           <p className="flex-1 text-sm">LinkedIn</p>
@@ -67,7 +66,7 @@ const HomePage = () => {
           title="Code Sandbox"
           aria-label="code sandbox profile"
           href="https://codesandbox.io/u/rodgersgitau"
-          className=" flex flex-col justify-center items-center gap-4 text-center hover:text-pink-600 transition-all ease-out hover:-translate-y-2"
+          className="flex flex-col items-center justify-center gap-4 text-center transition-all ease-out hover:text-pink-600 hover:-translate-y-2"
         >
           <FiCodesandbox className="w-12 h-12 rounded-md" />
           <p className="flex-1 text-sm">CodeSandbox</p>
@@ -77,7 +76,7 @@ const HomePage = () => {
           title="My Resume"
           aria-label="download my resume"
           href="/documents/Rodgers M Gitau CV.pdf"
-          className=" flex flex-col justify-center items-center gap-4 text-center hover:text-pink-600 transition-all ease-out hover:-translate-y-2"
+          className="flex flex-col items-center justify-center gap-4 text-center transition-all ease-out hover:text-pink-600 hover:-translate-y-2"
         >
           <FaFilePdf className="w-12 h-12 rounded-md" />
           <p className="flex-1 text-sm">Resume</p>

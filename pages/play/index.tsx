@@ -3,8 +3,8 @@ import projects from "../../utils/work.json";
 
 const PlayPage = () => {
   return (
-    <section className="h-full w-full">
-      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10">
+    <section className="w-full h-full">
+      <div className="grid w-full h-full grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10">
         {projects.map((project) => (
           <WorkItem
             key={project.name}
