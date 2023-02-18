@@ -38,6 +38,7 @@ const HomePage = () => {
               height={760}
               alt="a photo of me"
               src="/images/me.jpg"
+              className="rounded-lg"
             />
           </div>
         </div>
