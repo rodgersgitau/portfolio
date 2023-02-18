@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useMemo } from "react";
+
 import { ThemeToggler } from "./ThemeToggler";
 
 export const Navigation = () => {
@@ -16,13 +17,13 @@ export const Navigation = () => {
   return (
     <nav className="sticky l-0 t-0 h-max w-full min-h-[7rem] flex flex-col md:flex-row items-center gap-10 bg-whitesmoke dark:bg-black">
       <div className="flex-1 ">
-        <div className="w-max flex gap-8 items-center">
+        <div className="flex items-center gap-8 w-max">
           {routes.map((route) => {
             return (
               <a
                 key={route.path}
                 href={route.path}
-                className="font-semibold underline underline-offset-8 hover:text-pink-600  transition-all ease-out hover:translate-y-1"
+                className="font-semibold underline transition-all ease-out underline-offset-8 hover:text-pink-600 hover:translate-y-1"
               >
                 {route.pathname}
               </a>
@@ -33,7 +34,7 @@ export const Navigation = () => {
       <div className="flex items-center justify-between gap-8">
         <div className="w-max">
           <Link href="/contact">
-            <span className="px-4 py-3 rounded-md bg-black text-brightGray dark:bg-brightGray dark:text-black hover:text-black hover:bg-pink-300 capitalize font-semibold transition-all ease-out hover:translate-y-1">
+            <span className="px-4 py-3 font-semibold capitalize transition-all ease-out bg-black rounded-md text-brightGray dark:bg-brightGray dark:text-black hover:text-black hover:bg-pink-300 hover:translate-y-1">
               Let's Talk
             </span>
           </Link>

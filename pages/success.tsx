@@ -4,7 +4,7 @@ export default function () {
   return (
     <div className="min-h-[60vh] w-max h-max">
       <div className="flex flex-col gap-12">
-        <h1 className="text-2xl font-semibold font-sans">Thank you!</h1>
+        <h1 className="font-sans text-2xl font-semibold">Thank you!</h1>
         <p className="font-sans">
           Your form submission have been received. I will reach out soon
         </p>

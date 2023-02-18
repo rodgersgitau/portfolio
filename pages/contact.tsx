@@ -1,5 +1,6 @@
-import { FormEvent, useEffect, useMemo, useState } from "react";
-import { useForm, ValidationError } from "@formspree/react";
+import { useEffect, useMemo, useState } from "react";
+
+import { useForm } from "@formspree/react";
 
 const FormId =
   process.env.NEXT_PUBLIC_FORMSPREE_ID || process.env.NEXT_PUBLIC_FORM;
@@ -67,7 +68,7 @@ const ContactPage = () => {
 
   return (
     <div className="h-full w-90 md:w-[45vw] mx-auto flex flex-col gap-4">
-      <h1 className="font-black text-xl text-black dark:text-gray-400">
+      <h1 className="text-xl font-black text-black dark:text-gray-400">
         Leave some details and I will reach out ...
       </h1>
       {typeof message !== "undefined" && (
@@ -79,7 +80,7 @@ const ContactPage = () => {
           <p className="flex-1 text-sm font-semibold ">{message.text}</p>
           <button
             onClick={() => setMessage(undefined)}
-            className="text-lg bg-transparent font-semibold"
+            className="text-lg font-semibold bg-transparent"
           >
             x
           </button>
@@ -89,7 +90,7 @@ const ContactPage = () => {
         method="POST"
         name="RGitauContactForm"
         onSubmit={handleSubmit}
-        className="flex-1 w-full h-full grid grid-cols-2 gap-10"
+        className="grid flex-1 w-full h-full grid-cols-2 gap-10"
       >
         <p className="hidden">
           <label id="contact-form-bot-label">
@@ -101,7 +102,7 @@ const ContactPage = () => {
           return (
             <div
               key={`input-${name}`}
-              className="relative z-0 flex flex-col-reverse gap-2 w-full group text-sm text-black dark:text-gray-400"
+              className="relative z-0 flex flex-col-reverse w-full gap-2 text-sm text-black group dark:text-gray-400"
             >
               <input
                 {...rest}
@@ -113,7 +114,7 @@ const ContactPage = () => {
                 htmlFor={name}
                 className="text-sm font-semibold peer-focus:text-purple-500"
               >
-                <div className="flex gap-1 items-center">
+                <div className="flex items-center gap-1">
                   <span>{label}</span>
                   {required && <sup>*</sup>}
                 </div>
@@ -121,7 +122,7 @@ const ContactPage = () => {
             </div>
           );
         })}
-        <div className="col-span-2 relative z-0 flex flex-col-reverse gap-3 w-full group text-sm text-black dark:text-gray-400">
+        <div className="relative z-0 flex flex-col-reverse w-full col-span-2 gap-3 text-sm text-black group dark:text-gray-400">
           <textarea
             rows={8}
             id="message"
@@ -145,7 +146,7 @@ const ContactPage = () => {
           Request For Callback
         </button>
       </form>
-      <small className="text-right text-xs text-black dark:text-gray-500">
+      <small className="text-xs text-right text-black dark:text-gray-500">
         * Required Fields
       </small>
     </div>
