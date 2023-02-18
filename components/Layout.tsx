@@ -36,7 +36,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
                 className="inline-block w-12 h-12 text-blue-500 fill-current dark:text-pink-600"
               />
             </div>
-            <div className="absolute z-10 hidden text-pink-600  md:block -bottom-4 -right-4">
+            <div className="absolute z-10 hidden text-pink-600 md:block -bottom-4 -right-4">
               <NextImage
                 alt=""
                 width={100}
@@ -48,7 +48,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
             <Navigation />
 
-            <div className="flex-1 w-full h-full p-8 text-black bg-whitesmoke dark:bg-black/25 dark:text-brightGray">
+            <div className="flex-1 w-full h-full py-8 text-black bg-whitesmoke dark:bg-black/25 dark:text-brightGray">
               {children}
             </div>
 

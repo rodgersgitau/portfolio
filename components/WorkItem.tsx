@@ -19,12 +19,13 @@ export const WorkItem = ({
 }: WorkItemProps) => {
   return (
     <div className="relative w-full bg-white rounded-md shadow-lg dark:bg-black group shadow-black dark:shadow-brightGray/25">
-      <div className="h-[28vh] flex">
+      <div className="h-[30vh] flex">
         <div className="flex-1 w-full h-full">
           <Image
+            priority
             alt={name}
             src={images[0]}
-            className="w-full h-[inherit] object-cover rounded-l-sm"
+            className="object-cover w-full h-[30vh] aspect-square"
           />
         </div>
 

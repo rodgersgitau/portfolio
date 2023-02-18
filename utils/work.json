@@ -2,7 +2,7 @@
   {
     "name": "Mzizi: Design System",
     "description": "An opionionated UI Kit for web applications.",
-    "techStack": ["Svelte", "Stripe", "TailwindCSS", "RadixUI"],
+    "techStack": ["Svelte", "TailwindCSS", "RadixUI"],
     "images": [
       "/images/ostroffe-butchery/homepage.png",
       "/images/ostroffe-butchery/categories.png",
@@ -14,7 +14,7 @@
   {
     "name": "Mzizi: CMS",
     "description": "An opionionated mini-CMS for web applications.",
-    "techStack": ["React", "Stripe", "TailwindCSS", "Google Maps"],
+    "techStack": ["React", "Stripe", "TailwindCSS", "RadixUI"],
     "images": [
       "/images/ostroffe-butchery/categories.png",
       "/images/ostroffe-butchery/itempage.png",
@@ -25,7 +25,7 @@
   {
     "name": "Mzizi: People",
     "description": "An opionionated TRM web applications for SMEs.",
-    "techStack": ["React", "Stripe", "MUI", "Google Maps"],
+    "techStack": ["React", "Stripe", "TailwindCSS", "Google Maps"],
     "images": [
       "/images/ostroffe-butchery/itempage.png",
       "/images/ostroffe-butchery/cartpage.png",
@@ -52,8 +52,8 @@
   },
   {
     "name": "Wholelife",
-    "description": "A task management web application. Includes mini-CMS for authorized editing of products, categories & prices.",
-    "techStack": ["React", "Stripe", "MUI", "Google Maps"],
+    "description": "A task management web application. Includes mini-CMS for authorized editing of tasks, subtasks & personel.",
+    "techStack": ["React", "Stripe", "BootstrapUI", "ExpressJS"],
     "images": [
       "/images/ostroffe-butchery/homepage.png",
       "/images/ostroffe-butchery/categories.png",

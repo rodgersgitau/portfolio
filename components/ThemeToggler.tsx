@@ -20,10 +20,10 @@ export const ThemeToggler: FC = () => {
 
   return (
     <button
-      className="px-4 py-2 w-[8rem] rounded-md bg-transparent border-2 border-black dark:border-gray-200"
+      className="px-4 py-2 bg-transparent border-2 border-black rounded-md w-max dark:border-gray-200"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center gap-4">
         {theme === "light" ? (
           <FiSun fontSize="1.5rem" />
         ) : (

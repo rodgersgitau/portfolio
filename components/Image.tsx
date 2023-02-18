@@ -32,7 +32,7 @@ export const Image: FC<ImageProps> = ({
         width={width}
         height={height}
         onLoadingComplete={onLoadHandler}
-        className={`bg-gray-400 dark:bg-gray-800/25 rounded-lg transition duration-100 ${
+        className={`bg-gray-400 dark:bg-gray-800/25 transition duration-100 ${
           isReady ? "scale-100 blur-0" : "scale-105 blur-2xl"
         } ${props.className}`}
       />
