@@ -1,4 +1,6 @@
-import projects from "./work.json";
+export const SITE_URL = process.env.SITE_URL || "/";
+
+export const getImageUrl = (url: string) => SITE_URL + url;
 
 export const getSlug = (name: string) => {
   return name
@@ -10,15 +12,4 @@ export const getSlug = (name: string) => {
     .replace(/\s+/g, "-")
     .replace(/[^\w-]+/g, "")
     .replace(/--+/g, "-");
-};
-
-export const getProjects = () => projects;
-
-export const getFilters = () => {
-  const allCategories = new Set("");
-  allCategories.add("All");
-  projects.map((project) => {
-    project.techStack.map((tech) => allCategories.add(tech));
-  });
-  return [...allCategories];
 };

@@ -10,8 +10,19 @@ module.exports = {
     extend: {
       colors: {
         black: "#1d1d20",
-        purpleGray: "#a7a6ba",
         brightGray: "#E8E9EB",
+        primary: {
+          50: "#FCE9F1",
+          100: "#FACCE2",
+          200: "#F5A5D2",
+          300: "#EF7FBF",
+          400: "#E957AD",
+          500: "#D73E97",
+          600: "#B93078",
+          700: "#93255B",
+          800: "#701A3D",
+          900: "#4D0F21",
+        },
       },
       backgroundImage: {
         "ascii-pattern": "url('/images/ascii-pattern.svg')",
