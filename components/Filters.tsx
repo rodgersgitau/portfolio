@@ -18,9 +18,9 @@ export const Filters: FC<FilterProps> = ({
           key={filter}
           style={{ cursor: "pointer" }}
           onClick={() => setActiveFilter(filter)}
-          className={`text-lg capitalize font-semibold font-serif ${
+          className={`text-lg capitalize font-semibold font-sans ${
             filter === activeFilter
-              ? "text-purple-600/75 underline underline-offset-2"
+              ? "text-pink-600/75 underline underline-offset-2"
               : "dark:text-brightGray/75 text-black/75"
           } hover:underline hover:underline-offset-2`}
         >

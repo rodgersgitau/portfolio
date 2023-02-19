@@ -23,7 +23,7 @@ export const Image: FC<ImageProps> = ({
   return (
     <div className={`block relative h-[${height}] w-[${width}]`}>
       {showShadow && (
-        <div className="absolute top-0 bottom-0 left-0 right-0 translate-x-8 translate-y-8 border-2 border-black rounded-lg -z-10 dark:border-purpleGray" />
+        <div className="absolute top-0 bottom-0 left-0 right-0 translate-x-8 translate-y-8 border-2 border-black rounded-lg -z-10 dark:border-pink-100" />
       )}
       <NextImage
         src={src}

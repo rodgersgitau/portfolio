@@ -1,0 +1,52 @@
+---
+slug : "wholelife"
+author : "Rodgers Gitau"
+date : "2022-03-20T13:09:24Z"
+title: "Wholelife"
+description: "A task management web application. Includes mini-CMS for authorized editing of tasks, subtasks & personel."
+techStack: ["React", "Stripe", "BootstrapUI", "ExpressJS"]
+images : [
+  "images/ostroffe-butchery/homepage.png",
+  "images/ostroffe-butchery/categories.png",
+  "images/ostroffe-butchery/itempage.png",
+  "images/ostroffe-butchery/cartpage.png",
+  "images/ostroffe-butchery/alert.png"
+]
+draft : true
+---
+
+## Overview
+
+**Wholelife** is a web application that provides a comprehensive solution for managing projects, tasks, subtasks, and personnel. It is designed to help teams and individuals plan, execute and track their work to achieve their goals efficiently. The application provides a user-friendly interface that allows users to create, assign, prioritize, and manage their tasks and projects.
+
+## Problem
+
+The idea for **Wholelife** was born out of a need to simplify and automate project management. The founder of the application, who is also a project manager, noticed that traditional project management tools were complex and difficult to use, resulting in low adoption rates and reduced productivity. He realized that a new tool was needed that could help teams and individuals easily manage their work without getting bogged down by unnecessary features and confusing interfaces.
+
+## Solution
+
+**Wholelife** was designed with a focus on simplicity, ease of use, and functionality. It offers a range of features that help users manage their projects, tasks, subtasks, and personnel efficiently. 
+
+Some of the key features of the application include:
+
+- **Project and Task Management:** Users can create projects, assign tasks, and set deadlines for each task. They can also track the progress of tasks and projects, and view their completion status in real-time.
+
+- **Subtask Management**: Users can create subtasks for each task, and assign them to different team members. This feature helps break down complex tasks into smaller, more manageable parts.
+  
+- **Personnel Management**: Users can add team members to projects, assign tasks to them, and track their progress. They can also view their workload and availability to ensure that tasks are assigned to the right people.
+  
+- **Priority Management**: Users can set priorities for each task and project, helping them focus on the most critical items first.
+
+- **Collaboration and Communication**: Wholelife provides a range of collaboration and communication features, including messaging, comments, and file sharing, to help team members stay connected and informed.
+
+- **Reporting and Analytics**: Wholelife provides detailed reports and analytics to help users track their progress, identify bottlenecks, and make informed decisions.
+
+## Results
+
+Since its launch, **Wholelife** has gained a loyal user base of individuals and teams across a variety of industries. The application has received positive feedback for its ease of use, comprehensive feature set, and affordability. The application has also helped users to improve their productivity and achieve their goals efficiently.
+
+## Conclusion
+
+**Wholelife** is an advanced task manager web application that provides a comprehensive solution for managing projects, tasks, subtasks, and personnel.
+
+It offers a range of features that help users simplify their work and achieve their goals efficiently. The application has gained a loyal user base and continues to evolve with new features and improvements.
