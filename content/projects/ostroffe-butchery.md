@@ -1,0 +1,48 @@
+---
+slug : "ostroffe-butchery"
+author : "Rodgers Gitau"
+date : "2022-03-20T13:09:24Z"
+title: "Ostroffe Butchery"
+techStack: ["NextJS", "React", "Stripe", "TailwindCSS"]
+description: "An ecommerce for a local butchery. Includes Mzizi CMS for authorized editing of products, categories & prices."
+images : [
+  "images/ostroffe-butchery/homepage.png",
+  "images/ostroffe-butchery/categories.png",
+  "images/ostroffe-butchery/itempage.png",
+  "images/ostroffe-butchery/cartpage.png",
+  "images/ostroffe-butchery/alert.png"
+]
+draft : false
+---
+
+## Background
+
+Ostroffe Butchery is a local meat processing and packaging company. The company supplies high-quality meat products to restaurants, hotels, and households across the region. The company has a loyal customer base, and they want to expand their reach by launching an eCommerce website.
+
+## Purpose
+
+The purpose of this case study is to design an eCommerce website for Ostroffe Butchery that will enable customers to place orders online, track their orders, and make payments through secure payment gateways.
+
+## Design
+
+The website was designed using the React framework with TypeScript as the programming language. The frontend was designed with a clean, modern, and responsive interface that is easy to navigate. The design is optimized for mobile devices, and it features a simple user interface that enables customers to browse products, add items to their cart, and checkout quickly.
+
+## Functionality
+
+The eCommerce website has several key features that make it easy for customers to shop online. These features include:
+
+- Product Listings: The website displays all available products in different categories, such as beef, chicken, lamb, and pork. Customers can browse products by category, search for specific products, or sort products by price or popularity.
+
+- Product Details: The website provides detailed information about each product, including its name, price, weight, and nutritional value. Customers can also view high-quality images of the products, read product descriptions, and view customer reviews.
+
+- Shopping Cart: The website has a shopping cart feature that enables customers to add products to their cart, view their cart, and modify their cart before checkout. The shopping cart also displays the total cost of the order, including shipping and taxes.
+
+- Checkout: The checkout process is simple and straightforward. Customers can enter their shipping and billing information, select a payment method, and review their order before submitting it. The website also supports multiple payment gateways, including credit/debit cards, PayPal, and Google Pay.
+
+- Order Tracking: Customers can track their orders by logging into their account and viewing their order history. They can view the status of their orders, such as "in progress," "shipped," or "delivered."
+
+- Customer Account: The website has a customer account feature that enables customers to create an account, view their order history, save their shipping and billing information, and manage their email preferences.
+
+## Conclusion
+
+The eCommerce website for Ostroffe Butchery is a user-friendly, reliable, and secure platform that enables customers to shop for high-quality meat products online. It features a modern design, intuitive user interface, and several key features that make online shopping easy and convenient. With this website, Ostroffe Butchery can expand its reach, increase sales, and offer customers a seamless online shopping experience.

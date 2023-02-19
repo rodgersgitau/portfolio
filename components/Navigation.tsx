@@ -7,15 +7,15 @@ export const Navigation = () => {
   const routes = useMemo(
     () => [
       { path: "/", pathname: "About" },
+      { path: "/work", pathname: "Work" },
       { path: "/contact", pathname: "Contact" },
-      // { path: "/work", pathname: "Work" },
       // { path: "/play", pathname: "Play" },
       // { path: "/notes", pathname: "Notes" },
     ],
     []
   );
   return (
-    <nav className="sticky l-0 t-0 h-max w-full min-h-[7rem] flex flex-col md:flex-row items-center gap-10 bg-whitesmoke dark:bg-black">
+    <nav className="sticky l-0 t-0 h-max w-full min-h-[7rem] flex flex-col md:flex-row items-center gap-10 px-8">
       <div className="flex-1 ">
         <div className="flex items-center gap-8 w-max">
           {routes.map((route) => {

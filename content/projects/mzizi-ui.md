@@ -1,0 +1,49 @@
+---
+slug : "mzizi-design-system"
+author : "Rodgers Gitau"
+date : "2022-03-20T13:09:24Z"
+title : "Mzizi: Design System"
+techStack: ["Svelte", "TailwindCSS", "HeadlessUI"]
+description : "An opionionated UI Kit for web applications."
+images : [
+  "images/ostroffe-butchery/homepage.png",
+  "images/ostroffe-butchery/categories.png",
+  "images/ostroffe-butchery/itempage.png",
+  "images/ostroffe-butchery/cartpage.png",
+  "images/ostroffe-butchery/alert.png"
+]
+draft : true
+---
+
+
+## Background:
+
+Mzizi is a design system that was created to help web application developers build beautiful and consistent user interfaces. It provides a set of reusable components, styles, and guidelines that can be used to create UIs that are both aesthetically pleasing and easy to use.
+
+The need for a custom design system arose when a team of developers realized that they were spending a lot of time creating custom UI components for each project. This was not only time-consuming but also led to inconsistencies across different projects. They also noticed that there was a lack of standards in the industry, which made it difficult for developers to create UIs that were both functional and aesthetically pleasing.
+
+## Development:
+
+To create Mzizi design system, the team started by defining a set of guidelines for creating UI components. These guidelines covered everything from naming conventions to accessibility standards. They then created a set of base styles that could be used across all components. These styles included typography, colors, spacing, and layout.
+
+Next, the team created a set of reusable components that could be used in any web application. These components included buttons, forms, navigation menus, and more. Each component was designed to be flexible and customizable, allowing developers to tailor them to their specific needs.
+
+To ensure that Mzizi was easy to use, the team created detailed documentation that included examples and code snippets. They also provided a set of tools that could be used to quickly prototype UIs using Mzizi components.
+
+## Benefits:
+
+Mzizi has had a number of benefits for web application developers. 
+
+- It has saved developers a significant amount of time by providing a set of reusable components and styles that can be used across multiple projects. This has also led to more consistent UIs across different projects, which has improved the user experience.
+
+- It has helped to improve the quality of UIs by providing guidelines and accessibility standards. This has helped developers to create UIs that are both functional and aesthetically pleasing.
+
+- It has made it easier for developers to collaborate on projects by providing a common set of UI components and styles. This has improved the overall efficiency of development teams.
+
+## Impact:
+
+Since its release, Mzizi has had a significant impact on web application development. It has been widely adopted by developers and has become a popular choice for creating UIs. It has also helped to establish a set of standards in the industry, which has led to more consistent and accessible UIs.
+
+## Conclusion:
+
+Mzizi design system that has helped to improve the quality and consistency of web application UIs. Its set of reusable components, styles, and guidelines has saved developers time and improved the overall efficiency of development teams. It has also had a significant impact on the industry, establishing a set of standards for creating UIs that are both functional and aesthetically pleasing.

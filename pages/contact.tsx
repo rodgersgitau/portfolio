@@ -108,11 +108,11 @@ const ContactPage = () => {
                 {...rest}
                 id={name}
                 required={required}
-                className="py-2.5 px-0 w-full bg-transparent  placeholder:text-gray-600 dark:placeholder:text-gray-500 appearance-none border-0 border-b-2 border-gray-600 dark:border-gray-300 focus:border-purple-600 dark:focus:border-purple-600 focus:outline-none focus:ring-0 peer"
+                className="py-2.5 px-0 w-full bg-transparent  placeholder:text-gray-600 dark:placeholder:text-gray-500 appearance-none border-0 border-b-2 border-gray-600 dark:border-gray-300 focus:border-pink-600 dark:focus:border-pink-600 focus:outline-none focus:ring-0 peer"
               />
               <label
                 htmlFor={name}
-                className="text-sm font-semibold peer-focus:text-purple-500"
+                className="text-sm font-semibold peer-focus:text-pink-500"
               >
                 <div className="flex items-center gap-1">
                   <span>{label}</span>
@@ -129,11 +129,11 @@ const ContactPage = () => {
             name="message"
             maxLength={300}
             placeholder="e.g I liked your portfolio and would like to discuss working on a project"
-            className="p-2.5 w-full rounded-md bg-transparent placeholder:text-gray-600 dark:placeholder:text-gray-500 appearance-none border-2 border-gray-600 dark:border-gray-300 focus:border-purple-600 focus:outline-none focus:ring-0 peer"
+            className="p-2.5 w-full rounded-md bg-transparent placeholder:text-gray-600 dark:placeholder:text-gray-500 appearance-none border-2 border-gray-600 dark:border-gray-300 focus:border-pink-600 focus:outline-none focus:ring-0 peer"
           />
           <label
             htmlFor="message"
-            className="text-sm font-semibold peer-focus:text-purple-500"
+            className="text-sm font-semibold peer-focus:text-pink-500"
           >
             Your Message
           </label>
@@ -141,7 +141,7 @@ const ContactPage = () => {
         <button
           type="submit"
           disabled={state.submitting}
-          className="col-span-2 opacity-80 text-[#fff] bg-black dark:bg-purple-600 hover:opacity-100 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center dark:opacity-100"
+          className="col-span-2 text-white bg-black/75 dark:bg-pink-600/75 hover:bg-black dark:hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center dark:opacity-100"
         >
           Request For Callback
         </button>
@@ -160,7 +160,7 @@ const alertStyling = (type: MessageType["type"]) => {
     case "success":
       return "bg-emerald-100 text-emerald-900";
     default:
-      return "bg-purpleGray text-black";
+      return "bg-pink-100 text-black";
   }
 };
 

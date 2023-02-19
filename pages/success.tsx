@@ -10,7 +10,7 @@ export default function () {
         </p>
         <a
           href="/"
-          className="col-span-2 opacity-80 text-[#fff] bg-black dark:bg-purple-600 hover:opacity-100 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center dark:opacity-100"
+          className="col-span-2 opacity-80 text-[#fff] bg-black dark:bg-pink-600 hover:opacity-100 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center dark:opacity-100"
         >
           <div className="flex items-center gap-8">
             <FiArrowLeft fontSize="1.25rem" />
