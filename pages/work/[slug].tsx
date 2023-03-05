@@ -101,14 +101,15 @@ const SingleProject: FC<ProjectProps> = ({ content, frontmatter }) => {
         Screenshots
       </h2>
 
-      <div className="w-full columns-1 md:columns-2 lg:columns-3 h-max">
+      <div className="grid w-full h-full grid-cols-1 gap-8 md:grid-cols-2">
         {frontmatter.images.map((image) => (
-          <div className="relative w-full h-full mb-4 rounded-lg">
+          <div className="relative w-full h-full rounded-lg shadow-2xl">
             <Image
+              priority
               key={image}
-              src={getImageUrl(image)}
               alt={frontmatter.title}
-              className="w-full h-full rounded-lg aspect-[16/9] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+              src={getImageUrl(image)}
+              className="object-cover w-full h-full rounded-lg aspect-[16/9]"
             />
           </div>
         ))}

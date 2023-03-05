@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import path from "path";
 import { useMemo, useState } from "react";
 
-import { Filters, IWorkItem, WorkItemPost } from "../../components";
+import { Filters, IWorkItem, WorkItem } from "../../components";
 
 const WorkPage = ({
   projects,
@@ -15,13 +15,13 @@ const WorkPage = ({
   const [activeFilter, setActiveFilter] = useState("All");
 
   return (
-    <section className="min-h-[60vh] h-full w-full flex flex-col">
+    <section className="min-h-[60vh] h-full w-full flex flex-col gap-8">
       <Filters
         filters={filters}
         activeFilter={activeFilter}
         setActiveFilter={setActiveFilter}
       />
-      <div className="grid w-full h-full grid-cols-1 py-12 transition-all lg:grid-cols-2 gap-x-6 gap-y-10">
+      <div className="flex w-full h-full gap-8">
         {projects
           .filter(({ frontmatter: project }) =>
             activeFilter !== "All"
@@ -29,7 +29,7 @@ const WorkPage = ({
               : project
           )
           .map((workItem, index) => (
-            <WorkItemPost key={index} project={workItem} />
+            <WorkItem key={index} project={workItem} />
           ))}
       </div>
     </section>
