@@ -24,7 +24,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <main className="h-full min-h-screen p-0 m-0 text-black min-w-screen dark:bg-black dark:text-brightGray ">
+      <main className="h-full min-h-screen p-0 m-0 text-black bg-brightGray min-w-screen dark:bg-black dark:text-brightGray ">
         <section className="relative w-full h-full p-8 bg-right bg-no-repeat bg-ascii-pattern-dark dark:bg-ascii-pattern bg-blend-overlay">
           <div className="container relative flex flex-col h-full gap-10 px-2 mx-auto md:px-8">
             <div className="absolute z-10 hidden md:block -top-4 -left-4 ">
