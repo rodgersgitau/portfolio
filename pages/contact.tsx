@@ -89,7 +89,11 @@ const ContactPage = () => {
       <form
         method="POST"
         name="RGitauContactForm"
-        onSubmit={handleSubmit}
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit(e);
+          e.currentTarget.reset();
+        }}
         className="grid flex-1 w-full h-full grid-cols-2 gap-10"
       >
         <p className="hidden">
