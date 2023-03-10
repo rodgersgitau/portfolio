@@ -101,7 +101,7 @@ const SingleProject: FC<ProjectProps> = ({ content, frontmatter }) => {
         Screenshots
       </h2>
 
-      <div className="grid w-full h-full grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="grid w-full h-full grid-cols-1 gap-8 lg:grid-cols-2">
         {frontmatter.images.map((image) => (
           <div className="relative w-full h-full rounded-lg shadow-2xl">
             <Image
