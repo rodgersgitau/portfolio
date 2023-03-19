@@ -25,37 +25,36 @@ export const WorkItem: FC<WorkItemProps> = ({ project }) => {
     frontmatter: { date: postDate, title, description, images, techStack },
   } = project;
   return (
-    <article className="relative bg-white rounded-md shadow-lg h-20rem card lg:card-side dark:bg-black group shadow-black dark:text-neutral-500">
-      <figure className="w-full h-full lg:w-[50%] card-image">
-        <Image
-          priority
-          alt={title}
-          src={getImageUrl(images[0])}
-          className="object-cover object-left w-full h-full"
-        />
-      </figure>
+    <article className="relative bg-white rounded-lg shadow-lg card lg:card-side dark:bg-black group">
+      <Image
+        priority
+        alt={title}
+        src={getImageUrl(images[0])}
+        className="object-cover object-left w-full h-full card-image lg:!rounded-l-lg "
+      />
 
-      <div className="w-full lg:w-[50%] card-body bg-white dark:bg-[#222] dark:text-white">
-        <div className="flex flex-col gap-8">
+      <div className="w-full lg:w-[50%] card-body lg:!rounded-r-lg bg-white dark:bg-[#222] dark:text-white">
+        <div className="flex flex-col space-y-4">
           <h3 className="text-2xl font-black">{title}</h3>
           <h4 className="text-sm">{description}</h4>
-          <div className="flex flex-wrap items-center gap-2 text-xs">
+          <dl className="flex space-x-2 text-xs text-slate-500 dark:text-gray-500">
             {techStack?.map((tech, idx) => (
-              <p
+              <dt
                 key={`${tech}-${Math.floor(idx * 0.1)}`}
-                className="px-2 py-1 font-bold text-pink-600 capitalize border border-pink-600 rounded-md max-w-max"
+                className="whitespace-nowrap"
               >
                 {tech}
-              </p>
+              </dt>
             ))}
-          </div>
-          <div className="flex items-center w-max h-max">
-            <Link href={`/work/${slug}`} passHref legacyBehavior>
-              <a className="w-max px-5 py-2.5 rounded-md bg-black text-brightGray dark:bg-brightGray dark:text-black hover:text-black hover:bg-pink-300 transition-all font-semibold">
-                View Case
-              </a>
-            </Link>
-          </div>
+          </dl>
+        </div>
+        <div className="absolute bottom-4 right-4">
+          <Link
+            href={`/work/${slug}`}
+            className="w-max px-5 py-2.5 rounded-md bg-black text-brightGray dark:bg-brightGray dark:text-black hover:text-black hover:bg-pink-300 transition-all font-semibold"
+          >
+            View Case
+          </Link>
         </div>
       </div>
     </article>

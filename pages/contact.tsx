@@ -88,7 +88,9 @@ const ContactPage = () => {
       )}
       <form
         method="POST"
+        data-netlify="true"
         name="RGitauContactForm"
+        netlify-honeypot="bot-field"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(e);

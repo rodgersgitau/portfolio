@@ -1,11 +1,14 @@
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
 import { FaFilePdf, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { FiCodesandbox } from "react-icons/fi";
 
-import { Image } from "../components";
+import { Image, ItemList, IWorkItem } from "../components";
 
-const HomePage = () => {
+const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
   return (
-    <div className="h-full min-h-[60vh] w-full flex flex-col gap-8 items-center justify-center">
+    <div className="h-full min-h-[60vh] w-full flex flex-col gap-16 items-center justify-center">
       <div className="flex flex-col-reverse items-center w-full gap-40 py-4 lg:flex-row">
         <div className="w-full lg:w-[50%] h-full flex flex-col gap-8 ">
           <h1 className="flex items-center gap-4 text-3xl font-semibold">
@@ -83,8 +86,58 @@ const HomePage = () => {
           <p className="flex-1 text-sm">Resume</p>
         </a>
       </div>
+      <div className="w-full my-8">
+        <ItemList
+          title="Recent Work"
+          items={projects.map((project) => ({
+            type: "study",
+            link: `/work/${project.slug}`,
+            title: project.frontmatter.title,
+            technologies: project.frontmatter.techStack,
+            description: project.frontmatter.description,
+          }))}
+        />
+      </div>
     </div>
   );
 };
+
+export async function getStaticProps() {
+  // Get files from the projects dir
+  const files = fs.readdirSync(path.join("content", "projects"));
+  // Get slug and frontmatter from projects
+  const tempPosts = files.map((filename) => {
+    // Create slug
+    const slug = filename.replace(".md", "");
+
+    // Get frontmatter
+    const markdownWithMeta = fs.readFileSync(
+      path.join("content", "projects", filename),
+      "utf-8"
+    );
+
+    const { data: frontmatter } = matter(markdownWithMeta);
+
+    if (frontmatter.draft === false) {
+      return {
+        slug,
+        frontmatter,
+      };
+    } else {
+      return null;
+    }
+  });
+
+  //  remove null in tempPosts
+  const projects = tempPosts.filter((workItem) => {
+    return workItem && workItem;
+  });
+
+  return {
+    props: {
+      projects,
+    },
+  };
+}
 
 export default HomePage;
