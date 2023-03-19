@@ -21,7 +21,7 @@ const WorkPage = ({
         activeFilter={activeFilter}
         setActiveFilter={setActiveFilter}
       />
-      <div className="flex w-full h-full gap-8">
+      <div className="grid w-full h-full grid-cols-1 gap-4 mx-auto xl:grid-cols-2">
         {projects
           .filter(({ frontmatter: project }) =>
             activeFilter !== "All"
