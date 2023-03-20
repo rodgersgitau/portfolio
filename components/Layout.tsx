@@ -51,7 +51,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
             <div className="flex-1 w-full h-full p-8">{children}</div>
 
             <footer className="flex flex-col w-full gap-8 px-8 text-black md:flex-row md:items-center md:gap-20 dark:text-brightGray">
-              <p>&copy; Copyright 2022</p>
+              <p>&copy; Copyright {new Date().getFullYear()}</p>
               <div className="flex items-center gap-1">
                 <FaPhoneSquareAlt fontSize="1.25rem" />
                 <span>+254 759085920</span>

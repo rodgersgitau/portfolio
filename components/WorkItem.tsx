@@ -25,7 +25,7 @@ export const WorkItem: FC<WorkItemProps> = ({ project }) => {
     frontmatter: { date: postDate, title, description, images, techStack },
   } = project;
   return (
-    <article className="relative bg-white rounded-lg shadow-lg card lg:card-side dark:bg-black group">
+    <article className="relative h-max lg:h-[30vh] bg-white rounded-lg shadow-lg card lg:card-side dark:bg-black group">
       <Image
         priority
         alt={title}
