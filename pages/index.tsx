@@ -14,7 +14,7 @@ const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
           <h1 className="flex items-center gap-4 text-3xl font-semibold">
             <span>Hello, I'm</span>
             <span className="relative inline-block p-1 px-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:dark:bg-pink-500 before:rounded-md">
-              <span className="relative mx-auto text-brightGray">
+              <span className="relative mx-auto text-base">
                 Rodgers M Gitau
               </span>
             </span>

@@ -21,7 +21,7 @@ export const Filters: FC<FilterProps> = ({
           className={`text-lg capitalize font-semibold font-sans ${
             filter === activeFilter
               ? "text-pink-600/75 underline underline-offset-2"
-              : "dark:text-brightGray/75 text-black/75"
+              : "dark:text-base/75 text-black/75"
           } hover:underline hover:underline-offset-2`}
         >
           {filter}

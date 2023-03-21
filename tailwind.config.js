@@ -9,20 +9,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        base: "#E8E9EB",
         black: "#1d1d20",
-        brightGray: "#E8E9EB",
-        primary: {
-          50: "#FCE9F1",
-          100: "#FACCE2",
-          200: "#F5A5D2",
-          300: "#EF7FBF",
-          400: "#E957AD",
-          500: "#D73E97",
-          600: "#B93078",
-          700: "#93255B",
-          800: "#701A3D",
-          900: "#4D0F21",
-        },
+        greyish: "#79746d",
       },
       backgroundImage: {
         "ascii-pattern": "url('/images/ascii-pattern.svg')",
@@ -36,15 +25,14 @@ module.exports = {
   },
   daisyui: {
     themes: [
-      // {
-      //   mytheme: {
-      //     primary: "#a991f7",
-      //     secondary: "#f6d860",
-      //     accent: "#37cdbe",
-      //     neutral: "#3d4451",
-      //     "base-100": "#ffffff",
-      //   },
-      // },
+      {
+        mytheme: {
+          primary: "#D73E97",
+          secondary: "#1d1d20",
+          accent: "#79746d",
+          "base-100": "#e8e9eb",
+        },
+      },
       "lofi",
       "corporate",
     ],
