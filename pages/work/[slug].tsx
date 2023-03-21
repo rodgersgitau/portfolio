@@ -38,7 +38,7 @@ const SingleProject: FC<ProjectProps> = ({ content, frontmatter }) => {
   });
 
   return (
-    <div className="relative flex flex-col w-full gap-12 text-black dark:text-brightGray">
+    <div className="relative flex flex-col w-full gap-12 text-black dark:text-base">
       <NextSeo
         title={frontmatter.title}
         description={frontmatter.description}
@@ -73,7 +73,7 @@ const SingleProject: FC<ProjectProps> = ({ content, frontmatter }) => {
           alt={frontmatter.title}
           className="object-cover object-left-top w-full h-[40vh] rounded-lg"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 p-8 text-brightGray bg-black/80">
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 p-8 text-base bg-black/80">
           <h1 className="font-sans text-4xl font-bold text-center text-current capitalize ">
             {frontmatter.title}
           </h1>
@@ -93,7 +93,7 @@ const SingleProject: FC<ProjectProps> = ({ content, frontmatter }) => {
         </div>
       </div>
 
-      <ReactMarkdown className="w-full prose-base dark:prose-invert max-w-none h-max columns-auto prose-headings:text-black dark:prose-headings:text-brightGray prose-headings:font-sans prose-headings:font-semibold prose-li:list-disc">
+      <ReactMarkdown className="w-full prose-base dark:prose-invert max-w-none h-max columns-auto prose-headings:text-black dark:prose-headings:text-base prose-headings:font-sans prose-headings:font-semibold prose-li:list-disc">
         {content}
       </ReactMarkdown>
 

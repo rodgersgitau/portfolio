@@ -51,7 +51,7 @@ export const WorkItem: FC<WorkItemProps> = ({ project }) => {
         <div className="absolute bottom-4 right-4">
           <Link
             href={`/work/${slug}`}
-            className="w-max px-5 py-2.5 rounded-md bg-black text-brightGray dark:bg-brightGray dark:text-black hover:text-black hover:bg-pink-300 transition-all font-semibold"
+            className="w-max px-5 py-2.5 rounded-md bg-black text-base dark:bg-base dark:text-black hover:text-black hover:bg-pink-300 transition-all font-semibold"
           >
             View Case
           </Link>

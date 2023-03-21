@@ -1,15 +1,15 @@
-import Link from "next/link";
-import { useMemo } from "react";
+import Link from 'next/link';
+import { useMemo } from 'react';
 
-import { ThemeToggler } from "./ThemeToggler";
+import { ThemeToggler } from './ThemeToggler';
 
 export const Navigation = () => {
   const routes = useMemo(
     () => [
       { path: "/", pathname: "About" },
       { path: "/work", pathname: "Work" },
+      { path: "/play", pathname: "Playground" },
       { path: "/contact", pathname: "Contact" },
-      // { path: "/play", pathname: "Play" },
       // { path: "/notes", pathname: "Notes" },
     ],
     []
@@ -34,7 +34,7 @@ export const Navigation = () => {
       <div className="flex items-center justify-between gap-8">
         <div className="w-max">
           <Link href="/contact">
-            <span className="px-4 py-3 font-semibold capitalize transition-all ease-out bg-black rounded-md text-brightGray dark:bg-brightGray dark:text-black hover:text-black hover:bg-pink-300 hover:translate-y-1">
+            <span className="px-4 py-3 text-base font-semibold capitalize transition-all ease-out bg-black rounded-md dark:bg-base dark:text-black hover:text-black hover:bg-pink-300 hover:translate-y-1">
               Let's Talk
             </span>
           </Link>

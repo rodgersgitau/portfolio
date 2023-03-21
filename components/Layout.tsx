@@ -24,7 +24,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <main className="h-full min-h-screen p-0 m-0 text-black bg-brightGray min-w-screen dark:bg-black dark:text-brightGray ">
+      <main className="h-full min-h-screen p-0 m-0 text-black bg-base min-w-screen dark:bg-black dark:text-base ">
         <section className="relative w-full h-full p-8 bg-right bg-no-repeat bg-ascii-pattern-dark dark:bg-ascii-pattern bg-blend-overlay">
           <div className="container relative flex flex-col h-full gap-10 px-2 mx-auto md:px-8">
             <div className="absolute z-10 hidden md:block -top-4 -left-4 ">
@@ -50,7 +50,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
             <div className="flex-1 w-full h-full p-8">{children}</div>
 
-            <footer className="flex flex-col w-full gap-8 px-8 text-black md:flex-row md:items-center md:gap-20 dark:text-brightGray">
+            <footer className="flex flex-col w-full gap-8 px-8 text-black md:flex-row md:items-center md:gap-20 dark:text-base">
               <p>&copy; Copyright {new Date().getFullYear()}</p>
               <div className="flex items-center gap-1">
                 <FaPhoneSquareAlt fontSize="1.25rem" />
