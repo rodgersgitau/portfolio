@@ -11,10 +11,10 @@ const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
     <div className="h-full min-h-[60vh] w-full flex flex-col gap-16 items-center justify-center">
       <div className="flex flex-col-reverse items-center w-full gap-40 py-4 lg:flex-row">
         <div className="w-full lg:w-[50%] h-full flex flex-col gap-8 ">
-          <h1 className="flex items-center gap-4 text-3xl font-semibold">
-            <span>Hello, I'm</span>
+          <h1 className="flex items-center gap-4 font-semibold">
+            <span className="text-3xl">Hello, I'm</span>
             <span className="relative inline-block p-1 px-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:dark:bg-pink-500 before:rounded-md">
-              <span className="relative mx-auto text-base">
+              <span className="relative mx-auto text-2xl text-white">
                 Rodgers M Gitau
               </span>
             </span>

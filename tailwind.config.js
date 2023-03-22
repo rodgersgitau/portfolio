@@ -30,7 +30,6 @@ module.exports = {
           primary: "#D73E97",
           secondary: "#1d1d20",
           accent: "#79746d",
-          "base-100": "#e8e9eb",
         },
       },
       "lofi",
