@@ -1,7 +1,7 @@
-import React from 'react';
-import { FiGithub, FiPlayCircle } from 'react-icons/fi';
+import React from "react";
+import { FiGithub, FiPlayCircle } from "react-icons/fi";
 
-import play from '../../utils/play.json';
+import play from "../../utils/play.json";
 
 const Playground = () => {
   return (
@@ -42,7 +42,7 @@ const Playground = () => {
                         target="_blank"
                         href={project.repository}
                         rel="noopener noreferrer nofollow"
-                        className="text-current rounded btn btn-outline btn-group"
+                        className="!text-white rounded btn-secondary btn btn-outline btn-group"
                       >
                         <div className="flex items-center gap-4 font-semibold capitalize">
                           <span>Repository</span>
