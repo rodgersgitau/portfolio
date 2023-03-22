@@ -20,7 +20,7 @@ export const ItemList: FC<ItemListProps> = ({ title, description, items }) => {
   return (
     <section className="flex flex-col max-w-full gap-8">
       {title && (
-        <h2 className="font-sans text-sm text-pink-500 uppercase xl:text-base">
+        <h2 className="font-sans text-sm text-pink-500 uppercase xl:text-lg">
           {title} —
         </h2>
       )}
