@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import { useMemo } from 'react';
+import Link from "next/link";
+import { useMemo } from "react";
 
-import { ThemeToggler } from './ThemeToggler';
+import { ThemeToggler } from "./ThemeToggler";
 
 export const Navigation = () => {
   const routes = useMemo(
     () => [
-      { path: "/", pathname: "About" },
-      { path: "/work", pathname: "Work" },
+      { path: "/", pathname: "Home" },
+      // { path: "/work", pathname: "Work" },
       { path: "/play", pathname: "Playground" },
       { path: "/contact", pathname: "Contact" },
       // { path: "/notes", pathname: "Notes" },
