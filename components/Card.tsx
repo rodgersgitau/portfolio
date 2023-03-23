@@ -1,36 +1,29 @@
 import { useTheme } from "next-themes";
-import Image from "next/image";
-import { FC, PropsWithChildren, useMemo } from "react";
+import { FC, useMemo } from "react";
+import { IconType } from "react-icons/lib";
 
-export interface CardProps extends PropsWithChildren {
-  image?: string;
-  alt?: string;
-
-  type?: "square" | "tall" | "full";
+export interface CardProps {
+  icon: JSX.Element;
+  title: string;
 }
 
-export const Card: FC<CardProps> = ({ image, alt = "", type = "square" }) => {
+export const Card: FC<CardProps> = ({ icon, title }) => {
   const { theme } = useTheme();
-  const cardSizing = useMemo(() => {
-    return type === "full"
-      ? "h-full w-full"
-      : type === "tall"
-      ? "h-[40rem] w-[20rem]"
-      : "h-[20rem] w-[20rem]";
-  }, [type]);
-
   const styling = useMemo(() => {
     if (theme === "dark") {
-      return "";
+      return "bg-transparent text-white hover:bg-primary/10 hover:text-primary";
     }
-    return "";
+    return "bg-white text-secondary hover:bg-primary/10 hover:text-primary";
   }, [theme]);
 
   return (
-    <div className={`relative rounded-md ${cardSizing} ${styling}`}>
-      {image && (
-        <Image src={image} alt={alt} fill={true} className="rounded-md" />
-      )}
+    <div
+      className={`relative p-4 md:p-8 w-full h-48 md:w-48 rounded-lg shadow shadow-current ${styling}`}
+    >
+      <div className="flex flex-col flex-wrap items-center gap-8 font-sans text-center">
+        <div className="text-4xl text-current ">{icon}</div>
+        <h1 className="capitalize lg:text-lg">{title}</h1>
+      </div>
     </div>
   );
 };

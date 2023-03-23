@@ -1,10 +1,19 @@
 import fs from "fs";
 import matter from "gray-matter";
+import Link from "next/link";
 import path from "path";
 import { FaFilePdf, FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import { FiCodesandbox } from "react-icons/fi";
+import {
+  FiCalendar,
+  FiCodesandbox,
+  FiKey,
+  FiMonitor,
+  FiSearch,
+  FiSettings,
+  FiTool,
+} from "react-icons/fi";
 
-import { Image, ItemList, IWorkItem } from "../components";
+import { CardList, Image, ItemList, IWorkItem } from "../components";
 
 const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
   return (
@@ -87,6 +96,19 @@ const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
         </a>
       </div>
       <div className="w-full my-8">
+        <CardList
+          title="Services"
+          cardItems={[
+            { title: "Planning & Consultation", icon: <FiCalendar /> },
+            { title: "Brand Development", icon: <FiTool /> },
+            { title: "Web Design & Development", icon: <FiMonitor /> },
+            { title: "Search Engine Optimization", icon: <FiSearch /> },
+            { title: "Support & Maintainance", icon: <FiSettings /> },
+            { title: "Content Management", icon: <FiKey /> },
+          ]}
+        />
+      </div>
+      <div className="w-full my-8">
         <ItemList
           title="Recent Work"
           items={projects.map((project) => ({
@@ -97,6 +119,24 @@ const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
             description: project.frontmatter.description,
           }))}
         />
+      </div>
+      <div className="w-full p-8 my-8 bg-white/80 min-h-[18rem] dark:bg-slate-600/10 rounded-md flex items-center">
+        <div className="flex flex-col w-full gap-8 h-max">
+          <h2 className="font-sans text-3xl capitalize">
+            Ready to take your digital presence to the next level?
+          </h2>
+          <p>
+            I would love to hear about what you want to accomplish and how I can
+            partner together to achieve your goals.
+          </p>
+          <div className="w-max">
+            <Link href="/contact">
+              <span className="capitalize transition-all ease-out bg-black rounded-md btn-lg btn btn-primary hover:text-black hover:bg-pink-300 hover:translate-y-1">
+                Let's Talk
+              </span>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
