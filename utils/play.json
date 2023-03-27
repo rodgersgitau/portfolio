@@ -14,11 +14,11 @@
     "description": "Ever watched these cult favourite movies? This is the opening sequence"
   },
   {
-    "name": "Tetricks",
+    "name": "Tetris",
     "link": "https://tetricks.netlify.app",
-    "image": "/images/play/tetricks.png",
+    "image": "/images/play/tetris.png",
     "repository": "https://github.com/rodgersgitau/labs/tree/master/tetris",
-    "description": "A stacking game with different sized block shapes"
+    "description": "A clone of the famous stacking game for different sized block shapes"
   },
   {
     "name": "Monopoly",
