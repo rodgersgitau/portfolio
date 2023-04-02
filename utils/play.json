@@ -21,15 +21,16 @@
     "description": "A clone of the famous stacking game for different sized block shapes"
   },
   {
+    "name": "Noughts & Crosses",
+    "link": "https://clone-tictactoe.netlify.app",
+    "image": "/images/play/tictactoe.png",
+    "repository": "https://github.com/valdadyne/noughts-and-crosses",
+    "description": "The classic game also known as tictactoe"
+  },
+  {
     "name": "Monopoly",
     "image": "/images/play/virtual-monopoly.png",
     "repository": "https://github.com/valdadyne/virtual-monopoly",
     "description": "The classic board game reimagined"
-  },
-  {
-    "name": "Noughts & Crosses",
-    "image": "/images/play/tictactoe.png",
-    "repository": "https://github.com/valdadyne/noughts-and-crosses",
-    "description": "The classic game also known as tictactoe"
   }
 ]
