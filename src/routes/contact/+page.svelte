@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import type { ActionData, PageData } from './$types';
 
 	interface MessageType {
 		type: 'info' | 'success' | 'error';
@@ -48,6 +49,8 @@
 				return 'bg-pink-100 text-black';
 		}
 	};
+
+	export let form: ActionData;
 </script>
 
 <svelte:head>
@@ -55,9 +58,14 @@
 </svelte:head>
 
 <div class="overflow-y-auto h-full w-90 md:w-[45vw] mx-auto">
-	<h1 class="text-xl font-black text-black dark:text-gray-400">
-		Leave some details and I will reach out ...
-	</h1>
+	<div class="flex items-center gap-2">
+		<div class="flex-1">
+			<h1 class="text-xl font-black text-black dark:text-gray-400">
+				Leave some details and I will reach out ...
+			</h1>
+		</div>
+		<sub class="text-xs text-right text-black dark:text-gray-500"> * Required Fields </sub>
+	</div>
 	{#if message}
 		<div
 			class={`${alertStyling(message.type)} w-full px-4 py-2.5 flex items-center gap-8 rounded-md`}
@@ -87,21 +95,27 @@
 			</label>
 		</p>
 
-		{#each inputs as { name, label, required, ...rest }}
+		{#each inputs as { name, label, ...rest }}
 			<div
 				class="relative z-0 flex flex-col-reverse w-full gap-2 text-sm text-black group dark:text-gray-400"
 			>
+				{#if form?.errors[name]}
+					<small class="text-xs text-red-500">
+						<span>*</span>
+						<span>{form?.errors[name]}</span>
+					</small>
+				{/if}
+
 				<input
 					{...rest}
 					id={name}
 					{name}
-					{required}
-					class="py-2.5 px-0 w-full bg-transparent placeholder:text-gray-600 dark:placeholder:text-gray-500 appearance-none border-0 border-b-2 border-gray-600 dark:border-gray-300 focus:border-pink-600 dark:focus:border-pink-600 focus:outline-none focus:ring-0 peer"
+					class="py-2.5 px-0 w-full !bg-transparent placeholder:text-gray-600 dark:placeholder:text-gray-500 appearance-none border-0 border-b-2 border-gray-600 dark:border-gray-300 focus:border-pink-600 dark:focus:border-pink-600 focus:outline-none focus:ring-0 peer"
 				/>
 				<label for={name} class="text-sm font-semibold peer-focus:text-pink-500">
 					<div class="flex items-center gap-1">
 						<span>{label}</span>
-						{#if required}
+						{#if rest.required}
 							<sup>*</sup>
 						{/if}
 					</div>
@@ -112,6 +126,12 @@
 		<div
 			class="relative z-0 flex flex-col-reverse w-full col-span-2 gap-3 text-sm text-black group dark:text-gray-400"
 		>
+			{#if form?.errors['message']}
+				<small class="text-xs text-red-500">
+					<span>*</span>
+					<span>{form?.errors['message']}</span>
+				</small>
+			{/if}
 			<textarea
 				rows={8}
 				id="message"
@@ -131,5 +151,4 @@
 			Request For Callback
 		</button>
 	</form>
-	<small class="text-xs text-right text-black dark:text-gray-500"> * Required Fields </small>
 </div>
