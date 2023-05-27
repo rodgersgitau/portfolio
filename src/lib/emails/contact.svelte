@@ -7,14 +7,6 @@
 	export let email: string | undefined;
 	export let message: string | undefined;
 
-	const props = {
-		contact,
-		company,
-		phoneNumber,
-		email,
-		message
-	};
-
 	const fontFamily =
 		'-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif';
 
@@ -76,7 +68,15 @@
 				width="200"
 				height="50"
 			/>
-			<Text style={paragraph}>{JSON.stringify(props)}</Text>
+			<Text style={paragraph}
+				>{JSON.stringify({
+					contact,
+					company,
+					phoneNumber,
+					email,
+					message
+				})}</Text
+			>
 			<Text style={paragraph}>A Svelte component library for building responsive emails</Text>
 			<Section style={btnContainer}>
 				<Button pX={12} pY={12} style={button} href="https://github.com/carstenlebek/svelte-email">
