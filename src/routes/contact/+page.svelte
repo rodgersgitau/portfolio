@@ -1,13 +1,41 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import type { ActionData, PageData } from './$types';
+	import { z } from 'zod';
+	import emailjs from '@emailjs/browser';
 
 	interface MessageType {
 		type: 'info' | 'success' | 'error';
 		text: string;
 	}
 
+	let formErrors: Record<string, string>;
 	let message: MessageType | undefined = undefined;
+
+	const contactSchema = z.object({
+		contact: z
+			.string({ required_error: 'Contact is required' })
+			.min(2)
+			.max(64, { message: 'Contact must be less than 64 characters' })
+			.trim(),
+		phoneNumber: z
+			.string()
+			.max(14, { message: 'PhoneNumber must be less than 14 characters' })
+			.optional(),
+		company: z
+			.string()
+			.max(64, { message: 'Contact must be less than 64 characters' })
+			.trim()
+			.optional(),
+		email: z
+			.string({ required_error: 'Email is required' })
+			.trim()
+			.max(64, { message: 'Name must be less than 64 characters' })
+			.email({ message: 'Email must be a valid email address' }),
+		message: z
+			.string({ required_error: 'Message is required' })
+			.min(5, { message: 'Message must be at least 5 characters' })
+			.trim()
+	});
 
 	const inputs = [
 		{
@@ -50,7 +78,25 @@
 		}
 	};
 
-	export let form: ActionData;
+	async function sendEmail(e: Event) {
+		try {
+			const form = e.target as HTMLFormElement;
+			const formData = Object.fromEntries(await form.formData());
+			const result = contactSchema.parse(formData);
+			if (result) {
+				const response = await emailjs.sendForm(
+					'YOUR_SERVICE_ID',
+					'YOUR_TEMPLATE_ID',
+					form,
+					'YOUR_PUBLIC_KEY'
+				);
+				console.log({ response });
+			}
+		} catch (error: any) {
+			const { fieldErrors } = error.flatten();
+			formErrors = fieldErrors;
+		}
+	}
 </script>
 
 <svelte:head>
@@ -83,9 +129,7 @@
 	{/if}
 	<form
 		use:enhance
-		method="POST"
-		action="?/submitMessage"
-		name="RGitauContactForm"
+		on:submit|preventDefault={sendEmail}
 		class="flex flex-col flex-1 w-full h-full gap-5 py-4 md:grid md:gap-10 md:grid-cols-2"
 	>
 		<p class="hidden">
@@ -99,10 +143,10 @@
 			<div
 				class="relative z-0 flex flex-col-reverse w-full gap-2 text-sm text-black group dark:text-gray-400"
 			>
-				{#if form?.errors[name]}
+				{#if formErrors[name]}
 					<small class="text-xs text-red-500">
 						<span>*</span>
-						<span>{form?.errors[name]}</span>
+						<span>{formErrors[name]}</span>
 					</small>
 				{/if}
 
@@ -126,10 +170,10 @@
 		<div
 			class="relative z-0 flex flex-col-reverse w-full col-span-2 gap-3 text-sm text-black group dark:text-gray-400"
 		>
-			{#if form?.errors['message']}
+			{#if formErrors['message']}
 				<small class="text-xs text-red-500">
 					<span>*</span>
-					<span>{form?.errors['message']}</span>
+					<span>{formErrors['message']}</span>
 				</small>
 			{/if}
 			<textarea
