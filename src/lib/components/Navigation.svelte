@@ -4,6 +4,7 @@
 	const routes = [
 		{ path: '/', pathname: 'Home' },
 		// { path: "/work", pathname: "Work" },
+		{ path: '/blog', pathname: 'Blog' },
 		{ path: '/play', pathname: 'Playground' },
 		{ path: '/contact', pathname: 'Contact' }
 	];
