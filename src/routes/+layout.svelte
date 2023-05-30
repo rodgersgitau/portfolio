@@ -32,7 +32,7 @@
 
 			<Navigation />
 
-			<div class="flex-1 w-full h-full p-8">
+			<div class="flex-1 w-full h-full xl:px-8">
 				<slot />
 			</div>
 
