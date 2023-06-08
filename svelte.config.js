@@ -17,7 +17,7 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter({ strict: false })
+		adapter: adapter({ edge: false, split: true, strict: false })
 	}
 };
 
