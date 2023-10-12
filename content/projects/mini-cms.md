@@ -1,8 +1,8 @@
 ---
-slug : "mzizi-cms"
+slug : "mini-cms"
 author : "Rodgers Gitau"
 date : "2022-03-20T13:09:24Z"
-title : "Mzizi: CMS"
+title : "Mini CMS"
 techStack: ["React", "Stripe", "TailwindCSS", "Express"]
 description : "An opionionated mini-CMS for web applications."
 images : [
@@ -12,7 +12,7 @@ images : [
   "images/ostroffe-butchery/cartpage.png",
   "images/ostroffe-butchery/alert.png"
 ]
-draft : true
+draft : false
 ---
 
 ## Background

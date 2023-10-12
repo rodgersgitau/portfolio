@@ -1,8 +1,8 @@
 ---
-slug : "mzizi-land-agent"
+slug : "land-agent"
 author : "Rodgers Gitau"
 date : "2022-03-20T13:09:24Z"
-title: "Mzizi Land Agent"
+title: "Land Agent"
 description: "A web application for local land retailer. Includes a mini-CMS for authorized editing of products & prices."
 techStack: ["React", "Stripe", "TailwindCSS", "Google Maps"]
 images : [

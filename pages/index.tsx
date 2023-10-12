@@ -1,19 +1,14 @@
 import fs from "fs";
 import matter from "gray-matter";
+import NextImage from "next/image";
 import Link from "next/link";
 import path from "path";
 import { FaFilePdf, FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import {
-  FiCalendar,
-  FiCodesandbox,
-  FiKey,
-  FiMonitor,
-  FiSearch,
-  FiSettings,
-  FiTool,
-} from "react-icons/fi";
+import { FiCodesandbox } from "react-icons/fi";
 
-import { CardList, Image, ItemList, IWorkItem } from "../components";
+import { Image, IWorkItem } from "../components";
+import Section from "../components/Section";
+import AnimatedWords from "../motion/components/AnimatedWords";
 
 const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
   return (
@@ -28,7 +23,7 @@ const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
               </span>
             </span>
           </h1>
-          <div className="flex flex-col gap-8 text-lg text-gray-800 dark:text-gray-400">
+          <div className="flex flex-col gap-8 text-lg text-slate-800 dark:text-slate-400">
             <p>
               I'm a full-stack software engineer based in Nairobi, Kenya. For
               the past 7+ years, I've designed, developed & shipped all sorts of
@@ -95,37 +90,48 @@ const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
           <p className="flex-1 text-sm">Resume</p>
         </a>
       </div>
-      <div className="w-full my-8">
-        <CardList
-          title="Services"
-          cardItems={[
-            { title: "Planning & Consultation", icon: <FiCalendar /> },
-            { title: "Brand Development", icon: <FiTool /> },
-            { title: "Web Design & Development", icon: <FiMonitor /> },
-            { title: "Search Engine Optimization", icon: <FiSearch /> },
-            { title: "Support & Maintainance", icon: <FiSettings /> },
-            { title: "Content Management", icon: <FiKey /> },
-          ]}
-        />
-      </div>
-      <div className="w-full my-8">
-        <ItemList
-          title="Recent Work"
-          items={projects.map((project) => ({
-            type: "study",
-            link: `/work/${project.slug}`,
-            title: project.frontmatter.title,
-            technologies: project.frontmatter.techStack,
-            description: project.frontmatter.description,
-          }))}
-        />
-      </div>
-      <div className="w-full p-8 my-8 bg-white/80 min-h-[18rem] dark:bg-slate-600/10 rounded-md flex items-center">
-        <div className="flex flex-col w-full gap-8 h-max">
+      <Section title="projects" className="w-full mx-auto my-8">
+        <div className="grid w-full h-full grid-cols-1 gap-8 py-8 lg:grid-cols-2">
+          {projects.map((project) => (
+            <div key={project.slug} className="relative group">
+              <div className="absolute transition duration-1000 rounded-lg opacity-20 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur group-hover:opacity-100 group-hover:duration-200" />
+              <div className="relative flex flex-col justify-center h-full gap-4 p-6 rounded-lg bg-slate-100 lg:flex-row text-black/70 dark:text-slate-100 dark:bg-black/90 group-hover:dark:bg-black group-hover:bg-slate-100 ring-slate-400/5 ring-1 dark:ring-slate-900/5">
+                <div className="relative flex-1 w-full min-h-[20rem] p-2 overflow-hidden rounded-t-lg shadow shadow-current/90 lg:rounded-lg">
+                  <NextImage
+                    alt=""
+                    fill
+                    className="object-cover object-left-top"
+                    src={`/${project.frontmatter.images[0]}`}
+                  />
+                </div>
+                <div className="grid self-center flex-1 w-full gap-8 py-4 h-max lg:py-0 lg:w-1/2">
+                  <h3 className="text-xl font-black capitalize lg:text-2xl text-slate-600 dark:text-slate-400">
+                    <AnimatedWords title={project.frontmatter.title} />
+                  </h3>
+                  <p className="text-base leading-8 text-current">
+                    {project.frontmatter.description}
+                  </p>
+                  <a
+                    href={project.slug}
+                    title={project.frontmatter.title}
+                    className="block font-semibold transition duration-200 text-slate-600 dark:text-slate-400 hover:text-pink-600 group-hover:underline underline-offset-4"
+                    target="_blank"
+                  >
+                    View Project →
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <div className="w-full p-8 my-8 bg-white/80 min-h-[18rem] h-max dark:bg-black/50 rounded-md flex items-center shadow shadow-current">
+        <div className="flex flex-col w-full gap-8">
           <h2 className="font-sans text-3xl capitalize">
             Ready to take your digital presence to the next level?
           </h2>
-          <p>
+          <p className="my-4">
             I would love to hear about what you want to accomplish and how I can
             partner together to achieve your goals.
           </p>

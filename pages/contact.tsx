@@ -47,25 +47,6 @@ const ContactPage = () => {
     ];
   }, []);
 
-  useEffect(() => {
-    if (state.succeeded) {
-      setMessage({
-        type: "success",
-        text: `Thank you! Your form submission have been received. I will reach out soon`,
-      });
-    } else if (state.errors.length > 0) {
-      const { code, message } = state.errors[0];
-      setMessage({
-        type: "error",
-        text: `${code}! ${message}`,
-      });
-    }
-
-    return () => {
-      setMessage(undefined);
-    };
-  }, [state.succeeded, state.errors.length]);
-
   return (
     <div className="h-full w-90 md:w-[45vw] mx-auto flex flex-col gap-4">
       <h1 className="text-xl font-black text-black dark:text-gray-400">
