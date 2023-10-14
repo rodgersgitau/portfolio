@@ -3,16 +3,22 @@ import matter from "gray-matter";
 import NextImage from "next/image";
 import Link from "next/link";
 import path from "path";
+import { motion } from "framer-motion";
 import { FaFilePdf, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { FiCodesandbox } from "react-icons/fi";
 
 import { Image, IWorkItem } from "../components";
 import Section from "../components/Section";
 import AnimatedWords from "../motion/components/AnimatedWords";
+import { dropWithFade, staggerChildren } from "../motion/animations";
 
 const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
   return (
-    <div className="h-full min-h-[60vh] w-full flex flex-col gap-16 items-center justify-center">
+    <motion.div
+      initial="initial"
+      animate="animate"
+      className="h-full min-h-[60vh] w-full flex flex-col gap-16 items-center justify-center"
+    >
       <div className="flex flex-col-reverse items-center w-full gap-40 py-4 lg:flex-row">
         <div className="w-full lg:w-[50%] h-full flex flex-col gap-8 ">
           <h1 className="flex items-center gap-4 font-semibold">
@@ -90,21 +96,36 @@ const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
           <p className="flex-1 text-sm">Resume</p>
         </a>
       </div>
-      <Section title="projects" className="w-full mx-auto my-8">
-        <div className="grid w-full h-full grid-cols-1 gap-8 py-8 lg:grid-cols-2">
-          {projects.map((project) => (
-            <div key={project.slug} className="relative group">
-              <div className="absolute transition duration-1000 rounded-lg opacity-20 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur group-hover:opacity-100 group-hover:duration-200" />
-              <div className="relative flex flex-col justify-center h-full gap-4 p-6 rounded-lg bg-slate-100 lg:flex-row text-black/70 dark:text-slate-100 dark:bg-black/90 group-hover:dark:bg-black group-hover:bg-slate-100 ring-slate-400/5 ring-1 dark:ring-slate-900/5">
-                <div className="relative flex-1 w-full min-h-[20rem] p-2 overflow-hidden rounded-t-lg shadow shadow-current/90 lg:rounded-lg">
+      <Section title="projects" className="w-full my-8 lg:mx-auto lg:max-w-7xl">
+        <motion.div
+          variants={staggerChildren}
+          className="grid w-full h-full grid-cols-1 gap-8 my-10 lg:gap-20 lg:grid-cols-2"
+        >
+          {projects.map((project, idx) => (
+            <motion.div
+              key={project.slug}
+              variants={dropWithFade}
+              className="relative w-full group lg:min-h-[45rem] ease-in-out"
+            >
+              <div
+                className={`absolute transition duration-1000 rounded-lg opacity-20 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur group-hover:opacity-100 group-hover:duration-200 ${
+                  idx % 2 === 1 ? "translate-y-[15%]" : "translate-y-0"
+                }`}
+              />
+              <div
+                className={`relative flex flex-col justify-center w-full h-full gap-4 p-8 rounded-lg lg:gap-20 bg-slate-100 text-black/70 dark:text-slate-100 dark:bg-black/90 group-hover:dark:bg-black group-hover:bg-slate-100 ring-slate-400/5 ring-1 dark:ring-slate-900/5 ${
+                  idx % 2 === 1 ? "translate-y-[15%]" : "translate-y-0"
+                }`}
+              >
+                <div className="relative flex-1 overflow-hidden rounded-t-lg shadow lg:h-2/3 min-h-[15rem] shadow-current/90 lg:rounded-lg">
                   <NextImage
                     alt=""
                     fill
-                    className="object-cover object-left-top"
+                    className="object-left-top"
                     src={`/${project.frontmatter.images[0]}`}
                   />
                 </div>
-                <div className="grid self-center flex-1 w-full gap-8 py-4 h-max lg:py-0 lg:w-1/2">
+                <div className="grid justify-between gap-4 lg:h-1/3">
                   <h3 className="text-xl font-black capitalize lg:text-2xl text-slate-600 dark:text-slate-400">
                     <AnimatedWords title={project.frontmatter.title} />
                   </h3>
@@ -112,7 +133,7 @@ const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
                     {project.frontmatter.description}
                   </p>
                   <a
-                    href={project.slug}
+                    href={`/work/${project.slug}`}
                     title={project.frontmatter.title}
                     className="block font-semibold transition duration-200 text-slate-600 dark:text-slate-400 hover:text-pink-600 group-hover:underline underline-offset-4"
                     target="_blank"
@@ -121,9 +142,9 @@ const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Section>
 
       <div className="w-full p-8 my-8 bg-white/80 min-h-[18rem] h-max dark:bg-black/50 rounded-md flex items-center shadow shadow-current">
@@ -144,7 +165,7 @@ const HomePage = ({ projects }: { projects: IWorkItem[] }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -175,9 +196,11 @@ export async function getStaticProps() {
   });
 
   //  remove null in tempPosts
-  const projects = tempPosts.filter((workItem) => {
-    return workItem && workItem;
-  });
+  const projects = tempPosts
+    .filter((workItem) => {
+      return workItem && workItem;
+    })
+    .sort((a, b) => a?.frontmatter.title.localeCompare(b?.frontmatter.title));
 
   return {
     props: {

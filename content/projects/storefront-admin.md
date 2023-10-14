@@ -1,16 +1,17 @@
 ---
-slug : "mini-cms"
+slug : "storefront-admin"
 author : "Rodgers Gitau"
 date : "2022-03-20T13:09:24Z"
-title : "Mini CMS"
-techStack: ["React", "Stripe", "TailwindCSS", "Express"]
-description : "An opionionated mini-CMS for web applications."
+title : "StoreFront Admin"
+techStack: ["React", "Stripe", "TailwindCSS", "NextJS", "PostgreSQL"]
+description : "An un-opionionated mini-CMS for managing any ecommerce store using its easy-to-use API"
 images : [
-  "images/ostroffe-butchery/homepage.png",
-  "images/ostroffe-butchery/categories.png",
-  "images/ostroffe-butchery/itempage.png",
-  "images/ostroffe-butchery/cartpage.png",
-  "images/ostroffe-butchery/alert.png"
+  "images/storefront-admin/dashboard.png",
+  "images/storefront-admin/billboards.png",
+  "images/storefront-admin/categories.png",
+  "images/storefront-admin/products.png",
+  "images/storefront-admin/orders.png",
+  "images/storefront-admin/settings.png"
 ]
 draft : false
 ---

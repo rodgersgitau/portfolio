@@ -12,7 +12,7 @@ images : [
   "images/ostroffe-butchery/cartpage.png",
   "images/ostroffe-butchery/alert.png"
 ]
-draft : false
+draft : true
 ---
 
 ## Overview
