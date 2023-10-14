@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
-
-import AnimatedWords from "../motion/components/AnimatedWords";
+import { InView } from "react-intersection-observer";
 
 import { riseWithFade } from "../motion/animations";
+import AnimatedWords from "../motion/components/AnimatedWords";
+
 import { cn } from "../utils";
 
 function SectionHeading({ title }: { title: string }) {
@@ -27,27 +28,31 @@ interface SectionProps {
   children?: ReactNode;
   className?: string;
   description?: string;
-  title: string;
+  title?: string;
 }
 
 function Section({ children, className, description, title }: SectionProps) {
   return (
-    <motion.section
-      className={cn("relative h-max min-h-[50vh]", className)}
-      initial="initial"
-      animate="animate"
-    >
-      <motion.div
-        variants={riseWithFade}
-        className={"w-full mx-auto flex flex-col items-center gap-8"}
-      >
-        <SectionHeading title={title} />
-        {description && <SectionDescription description={description} />}
-        <motion.div className="flex-1" variants={riseWithFade}>
-          {children}
-        </motion.div>
-      </motion.div>
-    </motion.section>
+    <InView threshold={0.25}>
+      {({ ref, inView }) => (
+        <motion.section
+          ref={ref}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+          animate={inView ? { opacity: 1 } : { opacity: 0.25 }}
+          className={cn("relative h-max min-h-[50vh]", className)}
+        >
+          <motion.div
+            variants={riseWithFade}
+            className={"w-full mx-auto flex flex-col items-center gap-8"}
+          >
+            {title && <SectionHeading title={title} />}
+            {description && <SectionDescription description={description} />}
+            <div className="flex-1">{children}</div>
+          </motion.div>
+        </motion.section>
+      )}
+    </InView>
   );
 }
 
