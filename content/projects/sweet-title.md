@@ -4,13 +4,12 @@ author : "Rodgers Gitau"
 date : "2022-03-20T13:09:24Z"
 title: "Sweet Title Limited"
 description: "A web application for local land retailer. Includes a mini-CMS for authorized editing of products & prices."
-techStack: ["React", "Stripe", "MUI", "Google Maps"]
+techStack: ["React", "Stripe", "Bootstrap CSS", "Google Maps"]
 images : [
-  "images/ostroffe-butchery/homepage.png",
-  "images/ostroffe-butchery/categories.png",
-  "images/ostroffe-butchery/itempage.png",
-  "images/ostroffe-butchery/cartpage.png",
-  "images/ostroffe-butchery/alert.png"
+  "images/mzizi-land-agent/homepage.png",
+  "images/mzizi-land-agent/homepage-end.png",
+  "images/mzizi-land-agent/homepage-dark.png",
+  "images/mzizi-land-agent/homepage-dark-end.png",
 ]
 draft : true
 ---
