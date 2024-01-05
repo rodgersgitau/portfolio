@@ -31,8 +31,8 @@ const Accordion = ({ index, title, children, className }: AccordionProps) => {
         }}
         onClick={() => setIsOpen((prev) => !prev)}
         className={cn(
-          "flex items-center justify-between p-6 cursor-pointer font-medium border-y border-foreground/50",
-          isOpen ? "bg-secondary/10" : "bg-transparent",
+          "flex items-center justify-between p-6 cursor-pointer transition-all font-medium border-y border-foreground/40",
+          isOpen ? "bg-secondary/10 bg-opacity-10" : "bg-transparent",
           className
         )}
       >
@@ -69,7 +69,7 @@ const Accordion = ({ index, title, children, className }: AccordionProps) => {
             }}
             className="bg-background"
           >
-            <div className="grid items-center gap-8 px-6">{children}</div>
+            <div className="grid items-center gap-8 p-6">{children}</div>
           </motion.section>
         )}
       </AnimatePresence>

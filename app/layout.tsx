@@ -9,16 +9,16 @@ import Backdrop from "@/components/ui/backdrop";
 import PageLayout from "@/components/layouts/page-layout";
 import Theming from "@/components/providers/theme";
 
-import { SITE_URL } from "@/lib/config";
+import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`${SITE_URL}`),
+  metadataBase: new URL(`${siteConfig.site_url}`),
   title: {
     default: "Rodgers Gitau",
     template: "%s | Rodgers Gitau",
   },
-  description: "Developer, writer, and creator.",
+  description: "Creative developer, writer, and creator.",
 };
 
 export default function RootLayout({
