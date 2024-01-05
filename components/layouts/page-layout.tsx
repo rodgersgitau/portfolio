@@ -6,9 +6,16 @@ import { motion } from "framer-motion";
 
 import { Navbar } from "@/components/nav";
 
-import { riseWithFade } from "@/motion/animations";
+import { riseWithFade, staggerChildren } from "@/components/motion";
+import { cn } from "@/lib/utils";
 
-export default function PageLayout({ children }: { children: ReactNode }) {
+export default function PageLayout({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
     <motion.section
       initial={{ y: 100, opacity: 0 }}
@@ -22,12 +29,15 @@ export default function PageLayout({ children }: { children: ReactNode }) {
           stiffness: 200,
         },
       }}
-      className="relative flex flex-col flex-grow w-full h-full py-10 md:flex-row md:py-16"
+      className="relative flex flex-col flex-grow w-full h-full md:flex-row"
     >
       <Navbar />
       <motion.div
-        variants={riseWithFade}
-        className="flex flex-col flex-grow pt-14 md:pt-0 md:pl-48"
+        variants={staggerChildren}
+        className={cn(
+          "flex flex-col flex-grow bg-background/90",
+          " py-20 pl-0 md:py-16 md:pl-16 md:max-w-screen-lg md:ml-auto"
+        )}
       >
         {children}
       </motion.div>

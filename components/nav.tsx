@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { buttonVariants } from "@/components/ui/button";
 import { ThemeToggler } from "@/components/ui/theme-toggler";
 
-import { navItems } from "@/lib/config";
+import { navItems } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "./ui/button";
 
 export function Navbar() {
   const pathname = usePathname();

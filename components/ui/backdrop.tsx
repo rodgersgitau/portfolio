@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { dropWithFade } from "@/motion/animations";
+import { dropWithFade } from "@/components/motion";
 
 export default function Backdrop() {
   return (

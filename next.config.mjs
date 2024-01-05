@@ -3,23 +3,52 @@ import { sql } from '@vercel/postgres';
 const nextConfig = {
   experimental: {
     // ppr: true,
+    optimizeCss: true,
+    mdxRs: false,
     useLightningcss: true,
   },
+
+  pageExtensions: ['md', 'tsx', 'ts', 'jsx', 'js', 'md', 'mdx'],
+
   async redirects() {
+    const redirects = [
+      {
+        source: '/X11',
+        destination: '/blog/X11',
+        permanent: true,
+      },
+      {
+        source: '/atom',
+        destination: '/feed.xml',
+        permanent: true,
+      },
+      {
+        source: '/feed',
+        destination: '/feed.xml',
+        permanent: true,
+      },
+      {
+        source: '/rss',
+        destination: '/feed.xml',
+        permanent: true,
+      },
+    ]
     if (!process.env.POSTGRES_URL) {
       return [];
     }
 
-    const { rows: redirects } = await sql`
+    const { rows } = await sql`
       SELECT source, destination, permanent
-      FROM redirects;
+      FROM rows;
     `;
 
-    return redirects.map(({ source, destination, permanent }) => ({
+    const sqlRedirects = rows.map(({ source, destination, permanent }) => ({
       source,
       destination,
       permanent: !!permanent,
     }));
+
+    return [...new Set([...sqlRedirects, ...redirects])];
   },
   headers() {
     return [
