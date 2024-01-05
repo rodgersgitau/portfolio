@@ -9,9 +9,8 @@ import containerQueries from "@tailwindcss/container-queries";
 export default {
   darkMode: "class",
   content: [
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./content/**/*.mdx",
+    "./**/**/*.{ts,tsx}",
+    "./content/**/*.{md,mdx}",
     "./public/**/*.svg",
   ],
   theme: {
