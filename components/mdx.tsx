@@ -50,10 +50,10 @@ function CustomLink(props: LinkProps) {
   }
 
   if (href.startsWith("#")) {
-    return <a {...props} />;
+    return <Link {...props} />;
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  return <Link external {...props} />;
 }
 
 function RoundedImage(props: ImageProps) {

@@ -18,24 +18,24 @@ const Accordion = ({ index, title, children, className }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <motion.div
-        initial={false}
-        animate={{
-          transition: {
-            duration: 0.8,
-            type: "spring",
-            stiffness: 200,
-            delay: 0.1 * index,
-          },
-        }}
-        onClick={() => setIsOpen((prev) => !prev)}
-        className={cn(
-          "flex items-center justify-between p-6 cursor-pointer transition-all font-medium border-y border-foreground/40",
-          isOpen ? "bg-secondary/10 bg-opacity-10" : "bg-transparent",
-          className
-        )}
-      >
+    <motion.div
+      initial={false}
+      animate={{
+        transition: {
+          duration: 0.8,
+          type: "spring",
+          stiffness: 200,
+          delay: 0.6,
+        },
+      }}
+      onClick={() => setIsOpen((prev) => !prev)}
+      className={cn(
+        "grid gap-4 p-6 rounded cursor-pointer transition-all border border-foreground/10",
+        isOpen && "bg-opacity-10",
+        className
+      )}
+    >
+      <div className="flex-1 flex items-center justify-between">
         <h3 className="text-sm font-semibold leading-loose tracking-tight sm:text-base md:text-lg xl:text-xl md:tracking-wide">
           {title}
         </h3>
@@ -46,34 +46,28 @@ const Accordion = ({ index, title, children, className }: AccordionProps) => {
             <ArrowBigDownIcon className="w-6 h-6" />
           )}
         </div>
-      </motion.div>
+      </div>
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.section
-            initial="collapsed"
-            animate="open"
-            exit="collapsed"
-            variants={{
-              open: {
-                opacity: 1,
-                height: "max-content",
-              },
-              collapsed: {
-                opacity: 0,
-                height: 0,
-              },
+          <motion.div
+            initial={{ y: -20, opacity: 0.2 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{
+              y: -20,
+              opacity: 0.2,
+              transition: { duration: 0.2, type: "spring" },
             }}
             transition={{
-              duration: 0.4,
-              ease: [0.04, 0.62, 0.23, 0.98],
+              duration: 0.15,
+              type: "spring",
             }}
-            className="bg-background"
+            className="m-0 px-0 py-4 grid border-t border-foreground/10 items-center gap-8 text-foreground/80"
           >
-            <div className="grid items-center gap-8 p-6">{children}</div>
-          </motion.section>
+            {children}
+          </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </motion.div>
   );
 };
 

@@ -1,24 +1,41 @@
 "use client";
 
-import Link from "next/link";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
+import { riseWithFade } from "@/components/motion";
+
+import Link from "@/components/ui/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ThemeToggler } from "@/components/ui/theme-toggler";
 
 import { navItems } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { HomeIcon } from "lucide-react";
 
 export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed inset-0 z-50 tracking-tight border-b h-max min-h-16 bg-background/90 md:bg-transparent md:border-0 md:sticky md:h-full md:top-16 md:w-48 backdrop-opacity-10">
-      <nav
-        id="nav"
-        className="flex flex-row items-center gap-8 p-4 mx-auto md:flex-col fade md:p-0"
+    <motion.aside className="fixed left-0 right-0 h-20 w-full z-50 bg-background">
+      <motion.nav
+        variants={riseWithFade}
+        className="flex items-center gap-8 container max-w-screen-xl mx-auto py-6"
       >
-        <div className="flex items-center flex-grow gap-1 md:justify-start md:gap-4 md:flex-col md:w-max">
+        <Link
+          href="/"
+          className={
+            pathname === ""
+              ? "text-accent text-xs lg:text-sm"
+              : "text-current text-xs lg:text-sm"
+          }
+        >
+          <div className="flex !items-center gap-2">
+            <HomeIcon className="w-4 h-4" />
+            <span className="text-xs lg:text-sm">Home</span>
+          </div>
+        </Link>
+        <div className="ml-auto flex items-center justify-between gap-4 md:gap-8">
           {Object.entries(navItems).map(([path, { name }]) => {
             return (
               <Link
@@ -30,8 +47,8 @@ export function Navbar() {
                     variant: "link",
                     className:
                       pathname === path
-                        ? "!p-0 text-start text-accent text-xs lg:text-sm"
-                        : "!p-0 text-start text-current text-xs lg:text-sm",
+                        ? "text-accent text-xs lg:text-sm"
+                        : "text-current text-xs lg:text-sm",
                   })
                 )}
               >
@@ -39,11 +56,12 @@ export function Navbar() {
               </Link>
             );
           })}
+
+          <div className="w-max h-max">
+            <ThemeToggler />
+          </div>
         </div>
-        <div className="relative ml-auto md:ml-0 md:mt-auto w-max h-max">
-          <ThemeToggler />
-        </div>
-      </nav>
-    </aside>
+      </motion.nav>
+    </motion.aside>
   );
 }

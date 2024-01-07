@@ -12,14 +12,19 @@ import type { ProjectType } from "@/lib/types";
 
 interface ProjectProps extends ProjectType {
   index: number;
+  className?: string;
 }
 
-export default function Project({ index, ...project }: ProjectProps) {
+export default function Project({
+  index,
+  className,
+  ...project
+}: ProjectProps) {
   return (
     <Accordion
       index={index}
       title={project.name}
-      className="relative border-t last-of-type:border-b overflow-clip border-secondary/50"
+      className={cn("relative overflow-clip", className)}
     >
       <div className="flex flex-col items-center gap-4 py-4 md:flex-row">
         <div className={cn("grid gap-10 md:w-1/2", "active:text-secondary")}>
