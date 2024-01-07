@@ -2,108 +2,42 @@ import Image from "next/image";
 
 import { faqs, workExperiences } from "@/lib/data";
 import Accordion from "@/components/ui/accordion";
-import Link from "@/components/ui/link";
-import { cn, getDuration, parseDate, sortDates } from "@/lib/utils";
-import { intervalToDuration } from "date-fns";
+import { sortDates } from "@/lib/utils";
+
+// child components
+import Bio from "./bio";
+import WorkExperience from "./work-experience";
 
 export default function About() {
   return (
     <div className="flex-grow w-full h-full">
       <div className="relative grid gap-10 md:gap-16">
-        <section className="grid gap-10 md:gap-16 pt-0 md:min-h-[60svh]">
-          <div className="flex flex-col gap-10 md:gap-16 md:flex-row md:items-end">
-            <h1 className="text-lg font-black leading-loose tracking-tight md:text-xl xl:text-2xl md:tracking-wide">
+        {/* Bio */}
+        <section className="flex flex-col-reverse gap-10 md:gap-16 md:flex-row md:min-h-[40svh] items-start pt-8 lg:pt-10">
+          <div className="grid gap-6 !leading-loose tracking-wide md:flex-1">
+            <h2 className="pb-4 text-lg font-black md:text-xl xl:text-2xl border-b border-foreground/50">
               About
-            </h1>
-            <hr />
-            <div className="relative mx-auto md:mx-0 md:ml-auto aspect-1 w-[clamp(20rem,_30px,_20svw)] rounded-lg overflow-clip">
-              <Image
-                fill
-                alt="Rodgers"
-                src="/images/me.webp"
-                className="object-cover object-top"
-              />
-              <div className="absolute inset-0 opacity-60 bg-black/20" />
-            </div>
-          </div>
-          <div className="grid gap-6 md:gap-10">
-            <h2 className="space-y-8 text-base md:space-y-10 md:text-xl md:leading-snug md:tracking-tight xl:text-2xl xl:leading-loose xl:tracking-wide">
-              <p>
-                Rodgers Gitau
-                <span className="mx-2 font-mono">[/gĭ-täu/]</span>
-                is a creative software engineer presently living in Nairobi,
-                Kenya. But his location is neither here nor there.
-              </p>
             </h2>
-            <p className="leading-loose tracking-tight md:text-lg md:tracking-wide">
-              <span>
-                He started his career with big design dreams and eventually
-                pivoted to dev in 2016. After bouncing around a few agencies
-                &amp; spending 4+ years creating frontend healthcare solutions
-                at
-              </span>
-              <a
-                className="mx-2 link"
-                target="_blank"
-                href="https://savannahinformatics.com"
-              >
-                SIL,
-              </a>
-              <span>
-                he went independent in mid 2023 setting up his own agency
-              </span>
-              <a
-                className="mx-2 link"
-                target="_blank"
-                href="https://mzizistudio.com"
-              >
-                Mzizi Studio.
-              </a>
-            </p>
-            <p className="leading-loose tracking-tight md:text-lg md:tracking-wide">
-              <span>
-                When not working, he often spends his time making 2D/3D video
-                games &amp; visual effects for
-              </span>
-              <a
-                className="mx-2 link"
-                target="_blank"
-                href="https://rodgersgitau.github.io/labs"
-              >
-                labs
-              </a>
-              <span>, teaching the next-gen of developers over at</span>
-              <a
-                className="mx-2 link"
-                target="_blank"
-                href="https://devcoach.com"
-              >
-                dev coach,
-              </a>
-              <span>and seeking/sharing philosophy &amp; enlightment on</span>
-              <a
-                className="mx-2 link"
-                target="_blank"
-                href="https://hermitology.com"
-              >
-                hermitology.
-              </a>
-            </p>
-            <p className="leading-loose tracking-tight md:text-lg md:tracking-wide">
-              Nowadays, he lives with his girlfriend with a bunch chickens
-              trying to build a self-sufficient homestead before the impending
-              climate doomsday.
-            </p>
+            <Bio />
+          </div>
+          <div className="relative w-[clamp(15rem,_24px,_15svw)] md:w-[40%] lg:w-1/3 md:h-full mx-auto lg:mx-0 md:ml-auto aspect-1 rounded-lg overflow-clip bg-[#1d1d1d]">
+            <Image
+              fill
+              alt="Rodgers Gitau"
+              src="/images/me.webp"
+              className="relative object-cover object-top"
+            />
+            <div className="absolute inset-0 opacity-50 bg-black" />
           </div>
         </section>
 
-        {/* Work Experience */}
+        {/* Work Experiences */}
         <section className="relative z-10 grid gap-4 py-8 md:gap-8">
-          <h2 className="my-2 text-lg font-black leading-loose tracking-tight md:text-xl xl:text-2xl md:tracking-wide">
+          <h2 className="pb-4 text-lg font-black  md:text-xl xl:text-2xl border-b border-foreground/50">
             Work Experience
           </h2>
-          <div className="relative flex flex-col lg:flex-row lg:flex-wrap gap-8 h-full max-w-screen-lg !my-0">
-            {/* <div className="absolute w-2 rounded-lg -bottom-4 -top-4 -z-10 left-1/2 bg-foreground/50" /> */}
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 h-full !my-0">
+            <div className="absolute w-px rounded-lg bottom-0 -top-4 -z-10 left-1/2 bg-foreground/50" />
             {workExperiences
               .sort(function (a, b) {
                 const cur = a.endDate ? a.endDate : new Date().toString();
@@ -111,71 +45,28 @@ export default function About() {
                 return sortDates(acc, cur);
               })
               .map((work, index) => (
-                <div
+                <WorkExperience
+                  index={index}
+                  work={work}
                   key={`work-${index * Math.random()}`}
-                  className={cn(
-                    "border-2 rounded-lg  border-foreground/20 bg-background",
-                    "prose prose-neutral dark:prose-invert prose-ul:text-foreground",
-                    "flex-1 grid gap-2 p-6 w-full lg:w-[20rem] xl:w-[30rem]"
-                  )}
-                >
-                  <h2 className="flex items-center gap-4 mb-4 text-xl font-medium tracking-tighter">
-                    <span className="flex items-center justify-center w-6 h-6 text-sm border border-current rounded-full">
-                      {index + 1}
-                    </span>
-                    <span>{work.company}</span>
-                  </h2>
-                  <div className="flex flex-col gap-4 text-sm md:flex-row text-neutral-600 dark:text-neutral-400">
-                    <span className="w-max">{work.role}</span>
-                    <span className="flex items-center gap-1 ml-auto text-sm w-max">
-                      <span>{parseDate(work.startDate)}</span>
-                      <span>-</span>
-                      <span>
-                        {work.endDate
-                          ? `${parseDate(work.endDate)} ${getDuration(
-                              work.startDate.toString(),
-                              work.endDate.toString()
-                            )}`
-                          : "Current"}
-                      </span>
-                      <span></span>
-                    </span>
-                  </div>
-                  <hr className="my-3" />
-                  {work.description && (
-                    <p className="text-sm">{work.description}</p>
-                  )}
-                  <ul className="!m-0 !py-0 text-sm !list-disk">
-                    <li>
-                      On the frontend, I led our move from a custom webpack and
-                      React configuration to Next.js and the latest React
-                      patterns.
-                    </li>
-                    <li>
-                      In the process, I shared my learnings online, helping
-                      educate members of the React and Next.js community by
-                      creating courses.
-                    </li>
-                  </ul>
-                </div>
+                />
               ))}
           </div>
         </section>
 
         {/* FAQs */}
-
         <section className="grid gap-10 md:gap-16">
-          <h2 className="text-lg font-black leading-loose tracking-tight md:text-xl xl:text-2xl md:tracking-wide">
+          <h2 className="pb-4 text-lg font-black  md:text-xl xl:text-2xl border-b border-foreground/50">
             FAQs
           </h2>
-          <div className="relative grid w-full h-full gap-0">
+          <div className="relative grid w-full h-full gap-2 max-w-screen-xl mx-auto">
             {faqs.map((faq, index) => (
               <Accordion
                 index={index + 1}
                 title={faq.question}
                 key={`faq-${faq.question}`}
               >
-                <div className="flex items-center leading-loose tracking-tight md:tracking-wide text-foreground">
+                <div className="flex max-w-screen-xl prose dark:prose-invert items-center leading-loose tracking-tight md:tracking-wide text-foreground">
                   {faq.answer}
                 </div>
               </Accordion>

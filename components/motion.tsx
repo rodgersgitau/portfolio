@@ -1,3 +1,8 @@
+"use client";
+
+import { FC } from "react";
+import { motion } from "framer-motion";
+
 export const staggerChildren = {
   animate: {
     transition: {
@@ -63,4 +68,31 @@ export const riseWithFade = {
       duration: 0.7,
     },
   },
+};
+
+interface AnimatedWordsProps {
+  words: string;
+  className?: string;
+}
+
+export const AnimatedWords: FC<AnimatedWordsProps> = ({ words, className }) => {
+  return (
+    <motion.span
+      initial="initial"
+      animate="animate"
+      className={className}
+      variants={staggerChildren}
+    >
+      {words.split(" ").map((words, idx) => (
+        <span key={`words-${idx}`} className="inline-block overflow-hidden">
+          <motion.span
+            className="inline-block overflow-hidden"
+            variants={wordAnimation}
+          >
+            {words + "\u00A0"}
+          </motion.span>
+        </span>
+      ))}
+    </motion.span>
+  );
 };

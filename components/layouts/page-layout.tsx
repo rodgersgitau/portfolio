@@ -17,7 +17,7 @@ export default function PageLayout({
   className?: string;
 }) {
   return (
-    <motion.section
+    <motion.main
       initial={{ y: 100, opacity: 0 }}
       animate={{
         y: 0,
@@ -29,18 +29,12 @@ export default function PageLayout({
           stiffness: 200,
         },
       }}
-      className="relative flex flex-col flex-grow w-full h-full md:flex-row"
+      className={cn(
+        "relative flex-grow pt-20 pb-16 scroll-pt-20 scroll-pb-16",
+        "grid container w-full max-w-screen-xl mx-auto h-full"
+      )}
     >
-      <Navbar />
-      <motion.div
-        variants={staggerChildren}
-        className={cn(
-          "flex flex-col flex-grow bg-background/90",
-          " py-20 pl-0 md:py-16 md:pl-16 md:max-w-screen-lg md:ml-auto"
-        )}
-      >
-        {children}
-      </motion.div>
-    </motion.section>
+      {children}
+    </motion.main>
   );
 }

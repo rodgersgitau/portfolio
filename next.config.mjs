@@ -3,7 +3,7 @@ import { sql } from '@vercel/postgres';
 const nextConfig = {
   experimental: {
     // ppr: true,
-    optimizeCss: true,
+    // optimizeCss: true,
     mdxRs: false,
     useLightningcss: true,
   },
