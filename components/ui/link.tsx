@@ -21,7 +21,7 @@ const Link = ({
   children,
   className,
   title,
-  underline = true,
+  underline = false,
   tabIndex = 0,
   ...props
 }: LinkProps) => {
@@ -36,8 +36,8 @@ const Link = ({
           className: cn(
             `${
               underline
-                ? "px-0 underline underline-offset-4"
-                : "px-0 no-underline underline-offset-0"
+                ? "px-0 underline underline-offset-4 hover:text-accent/50"
+                : "px-0 no-underline"
             }`,
             className
           ),
@@ -60,8 +60,8 @@ const Link = ({
         className: cn(
           `${
             underline
-              ? "px-0 underline underline-offset-4"
-              : "px-0 no-underline underline-offset-0"
+              ? "px-0 underline underline-offset-4 hover:text-accent/50"
+              : "px-0 no-underline"
           }`,
           className
         ),

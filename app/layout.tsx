@@ -6,6 +6,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 
 import Backdrop from "@/components/ui/backdrop";
+import { Navbar } from "@/components/nav";
 import PageLayout from "@/components/layouts/page-layout";
 import Theming from "@/components/providers/theme";
 
@@ -28,17 +29,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn(GeistSans.variable, GeistMono.variable)}>
-      <body
-        suppressHydrationWarning
-        className="relative flex w-full h-full min-h-screen gap-8 antialiased text-foreground bg-background"
-      >
-        <Theming>
-          <main className="container flex flex-1 h-full min-h-screen mx-auto max-w-screen-2xl">
-            <PageLayout>{children}</PageLayout>
-          </main>
+      <Theming>
+        <body
+          suppressHydrationWarning
+          className="relative flex w-full h-full min-h-screen gap-8 antialiased bg-background/60"
+        >
+          <Navbar />
+          <PageLayout>{children}</PageLayout>
+          {/* Backdrop */}
           <Backdrop />
-        </Theming>
-      </body>
+        </body>
+      </Theming>
     </html>
   );
 }
