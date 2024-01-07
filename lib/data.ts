@@ -3,9 +3,6 @@ import { differenceInYears } from "date-fns";
 import type { FAQType, GraphicType, PostType, ProjectType } from "@/lib/types";
 
 export const navItems = {
-  "/": {
-    name: "home",
-  },
   "/about": {
     name: "about",
   },
@@ -15,6 +12,9 @@ export const navItems = {
   "/blog": {
     name: "blog",
   },
+  "/play": {
+    name: "playing",
+  },
   "/guestbook": {
     name: "guestbook",
   },
@@ -23,7 +23,8 @@ export const navItems = {
 export const workExperiences = [
   {
     role: "Frontend Developer",
-    contract: "Contract",
+    contract: "Freelance",
+    logo: "uncLogo",
     company: "Unit Care Network",
     startDate: new Date("05-01-2020"),
     endDate: new Date("02-01-2021"),
@@ -33,6 +34,7 @@ export const workExperiences = [
   {
     role: "Web Designer/Developer",
     contract: "Freelance",
+    logo: "reconLogo",
     company: "Recon Branding",
     startDate: new Date("06-01-2018"),
     endDate: new Date("07-13-2019"),
@@ -42,6 +44,7 @@ export const workExperiences = [
   {
     role: "Software Engineer II",
     contract: "Fulltime",
+    logo: "savannahLogo",
     company: "Savannah Informatics LTD",
     startDate: new Date("07-20-2018"),
     endDate: new Date("10-23-2022"),
@@ -51,6 +54,7 @@ export const workExperiences = [
   {
     role: "Lead Web Engineer",
     contract: "Fulltime",
+    logo: "mziziLogo",
     company: "Mzizi Studio",
     startDate: new Date("01-01-2023"),
     endDate: undefined,

@@ -11,7 +11,7 @@ export default function Backdrop() {
       initial="initial"
       animate="animate"
       variants={dropWithFade}
-      className="fixed inset-0 -z-50 bg-gradient"
+      className="fixed inset-0 -z-50"
     >
       <Image
         fill

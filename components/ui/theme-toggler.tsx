@@ -24,7 +24,7 @@ export const ThemeToggler: FC = () => {
     <Button
       size="sm"
       variant="outline"
-      className="flex items-center gap-2 p-2 font-medium"
+      className="flex items-center gap-2 font-medium"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "light" ? (
