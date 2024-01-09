@@ -13,7 +13,7 @@ export const navItems = {
     name: "blog",
   },
   "/play": {
-    name: "playing",
+    name: "play",
   },
   "/guestbook": {
     name: "guestbook",
