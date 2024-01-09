@@ -4,10 +4,10 @@ import { highlight } from "sugar-high";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { buttonVariants } from "@/components/ui/button";
-import { TweetComponent } from "@/components/tweet";
+import { TweetComponent } from "@/components/ui/tweet";
 import Link, { type LinkProps } from "@/components/ui/link";
 
-import { getSlug } from "@/lib/utils";
+import { cn, getSlug } from "@/lib/utils";
 
 interface TableDataProps {
   data: {
@@ -56,8 +56,17 @@ function CustomLink(props: LinkProps) {
   return <Link external {...props} />;
 }
 
-function RoundedImage(props: ImageProps) {
-  return <Image className="rounded-lg" {...props} />;
+interface RoundedImageProps {
+  className: "";
+  imageProps: ImageProps;
+}
+
+function RoundedImage(props: RoundedImageProps) {
+  return (
+    <div className={cn("relative", props.className)}>
+      <Image className="rounded-lg" {...props.imageProps} />
+    </div>
+  );
 }
 
 function Callout(props: { emoji: ReactNode; children: ReactNode }) {
