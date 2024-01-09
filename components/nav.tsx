@@ -17,10 +17,10 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <motion.aside className="fixed left-0 right-0 h-20 w-full z-50 bg-background">
+    <motion.aside className="fixed left-0 right-0 z-50 w-full h-20 bg-background">
       <motion.nav
         variants={riseWithFade}
-        className="flex items-center gap-8 container max-w-screen-xl mx-auto py-6"
+        className="container flex items-center w-full max-w-screen-xl gap-8 py-6 mx-auto"
       >
         <Link
           href="/"
@@ -35,7 +35,7 @@ export function Navbar() {
             <span className="text-xs lg:text-sm">Home</span>
           </div>
         </Link>
-        <div className="ml-auto flex items-center justify-between gap-4 md:gap-8">
+        <div className="flex items-center justify-between gap-4 ml-auto md:gap-8">
           {Object.entries(navItems).map(([path, { name }]) => {
             return (
               <Link

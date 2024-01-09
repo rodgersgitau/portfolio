@@ -20,14 +20,14 @@ export default function About() {
             </h2>
             <Bio />
           </div>
-          <div className="relative w-[clamp(15rem,_24px,_15svw)] md:w-[40%] lg:w-1/3 md:h-full mx-auto lg:mx-0 md:ml-auto aspect-1 rounded-lg overflow-clip bg-[#1d1d1d]">
+          <div className="relative w-[clamp(15rem,_24px,_15svw)] md:w-[40%] lg:w-1/3 md:h-full mx-auto lg:mx-0 md:ml-auto aspect-1 rounded-lg overflow-clip">
             <Image
               fill
               alt="Rodgers Gitau"
               src="/images/me.webp"
-              className="relative object-cover object-top"
+              className="relative object-cover object-top rounded-lg"
             />
-            <div className="absolute inset-0 opacity-50 bg-black" />
+            <div className="absolute inset-0 -z-10 opacity-50 bg-primary/20 rounded-lg" />
           </div>
         </section>
 

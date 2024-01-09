@@ -6,22 +6,54 @@
   * {
     padding: 0;
     margin: 0;
+    @apply border-border;
   }
 
   :root {
-    --text: 278 46% 8%;
+    --foreground: 278 46% 8%;
     --background: 270 40% 98%;
+
     --primary: 281 19% 26%;
+    --primary-foreground: 0 0% 98%;
     --secondary: 328 49% 65%;
+    --secondary-foreground: 0 0% 9%;
     --accent: 103 19% 46%;
+    --accent-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --text: 278 46% 92%;
+    --foreground: 278 46% 92%;
     --background: 270 40% 2%;
+
     --primary: 281 19% 74%;
+    --primary-foreground: 0 0% 9%;
     --secondary: 328 49% 35%;
+    --secondary-foreground: 0 0% 98%;
     --accent: 103 19% 54%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
   }
 
   ::-webkit-scrollbar {
@@ -35,7 +67,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(var(--text));
+    background: hsl(var(--foreground));
   }
 }
 

@@ -1,3 +1,4 @@
+import withMDX from "@next/mdx"
 import { sql } from '@vercel/postgres';
 
 const nextConfig = {
@@ -34,7 +35,7 @@ const nextConfig = {
       },
     ]
     if (!process.env.POSTGRES_URL) {
-      return [];
+      return [...redirects];
     }
 
     const { rows } = await sql`
@@ -101,4 +102,4 @@ const securityHeaders = [
   },
 ];
 
-export default nextConfig;
+export default withMDX(nextConfig);
