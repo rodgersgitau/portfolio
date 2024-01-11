@@ -1,12 +1,11 @@
 import withMDX from "@next/mdx"
-import { sql } from '@vercel/postgres';
 
 const nextConfig = {
   experimental: {
     // ppr: true,
     // optimizeCss: true,
     mdxRs: false,
-    useLightningcss: true,
+    useLightningcss: false,
   },
 
   pageExtensions: ['md', 'tsx', 'ts', 'jsx', 'js', 'md', 'mdx'],
@@ -34,22 +33,7 @@ const nextConfig = {
         permanent: true,
       },
     ]
-    if (!process.env.POSTGRES_URL) {
-      return [...redirects];
-    }
-
-    const { rows } = await sql`
-      SELECT source, destination, permanent
-      FROM rows;
-    `;
-
-    const sqlRedirects = rows.map(({ source, destination, permanent }) => ({
-      source,
-      destination,
-      permanent: !!permanent,
-    }));
-
-    return [...new Set([...sqlRedirects, ...redirects])];
+    return [...new Set([...redirects])];
   },
   headers() {
     return [
