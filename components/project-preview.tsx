@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/card";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import ProjectCard from "@/components/ui/project-card";
 
 interface Props {
   index?: number;
@@ -22,21 +24,15 @@ export default async function ProjectPreview({ name, className }: Props) {
     "./content/projects/" + name + "/index.mdx",
     "utf8"
   );
-  const { data, content } = matter(fileContent);
+  const { data: metadata, content } = matter(fileContent);
   const wordCount = content.split(" ").filter(Boolean).length;
 
   return (
-    <Link href={"/work/" + data.slug} className={cn("w-full group", className)}>
-      <Card className="w-full bg-transparent rounded-md">
-        <CardHeader className="space-y-4">
-          <CardTitle className="group-hover:underline group-hover:underline-offset-4">
-            {data.title}
-          </CardTitle>
-          <CardDescription className="flex items-center justify-between gap-4 py-2">
-            {data.description}
-          </CardDescription>
-        </CardHeader>
-      </Card>
-    </Link>
+    <ProjectCard
+      title={metadata.title}
+      imgSrc={metadata.images[0]}
+      href={"/work/" + metadata.slug}
+      description={metadata.description}
+    />
   );
 }

@@ -31,7 +31,7 @@ export default function PageLayout({
       }}
       className={cn(
         "relative flex-grow pt-20 pb-16 scroll-pt-20 scroll-pb-16",
-        "grid container w-full max-w-screen-xl mx-auto h-full"
+        "grid container w-full max-w-screen-xl mx-auto h-full text-shadow: 2px 3px 15px rgba(0,0,0,.15);"
       )}
     >
       {children}
