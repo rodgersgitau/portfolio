@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { readdir } from "fs/promises";
 
-import PostPreview from "@/components/ui/post-preview";
+import PostPreview from "@/components/post-preview";
 
 export const metadata = {
   title: "Blog",

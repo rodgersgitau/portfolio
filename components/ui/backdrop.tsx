@@ -10,14 +10,14 @@ import useMousePosition from "@/hooks/useMousePosition";
 export default function Backdrop() {
   const { x, y } = useMousePosition();
 
-  const size = 400;
+  const size = 300;
 
   return (
     <motion.div
       initial="initial"
       animate="animate"
       variants={dropWithFade}
-      className="fixed inset-0 cursor-pointer -z-50"
+      className="fixed inset-0 cursor-pointer -z-50 blur-2xl"
     >
       <Image
         fill
@@ -33,20 +33,17 @@ export default function Backdrop() {
       />
 
       <motion.div
-        className="absolute z-0 inset-0 !cursor-pointer bg-secondary/10 blur-lg"
+        className="absolute inset-0 duration-1000 cursor-pointer bg-accent/20 dark:bg-foreground/10"
         style={{
-          maskImage: "url('/images/mask.svg')",
           maskRepeat: "no-repeat",
-          maskSize: "400px",
+          maskImage: "url('/images/mask.svg')",
         }}
         animate={{
-          WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
           WebkitMaskSize: `${size}px`,
+          WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
       />
-
-      <div className="absolute inset-0 z-10 opacity-50 bg-background/20 blur-lg" />
     </motion.div>
   );
 }

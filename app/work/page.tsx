@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { readdir } from "fs/promises";
 
-import ProjectPreview from "@/components/ui/project-preview";
+import ProjectPreview from "@/components/project-preview";
 
 export const metadata = {
   title: "Work",
@@ -20,7 +20,7 @@ export default async function WorkList() {
             Projects
           </h1>
           <Suspense fallback={<div>Loading...</div>}>
-            <div className="flex flex-col w-full gap-4 max-w-screen-2xl">
+            <div className="grid w-full gap-4 mx-auto md:gap-8 max-w-screen-2xl">
               {projects.map((project) => (
                 <ProjectPreview key={project.name} name={project.name} />
               ))}
