@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
@@ -38,6 +40,8 @@ export default function RootLayout({
           <PageLayout>{children}</PageLayout>
           {/* Backdrop */}
           <Backdrop />
+          <Analytics />
+          <SpeedInsights />
         </body>
       </Theming>
     </html>
