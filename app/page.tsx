@@ -1,12 +1,11 @@
 import { readdir } from "fs/promises";
-import { ArrowRightIcon, MouseIcon, ScrollIcon } from "lucide-react";
+import { ArrowRightIcon, MouseIcon } from "lucide-react";
 
 import Link from "@/components/ui/link";
-import Accordion from "@/components/ui/accordion";
-import ProjectPreview from "@/components/ui/project-preview";
-
-import { Icons } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
+import Accordion from "@/components/ui/accordion";
+
+import ProjectPreview from "@/components/project-preview";
 
 import { faqs } from "@/lib/data";
 
@@ -73,7 +72,7 @@ export default async function Page() {
           <h2 className="pb-4 text-lg font-black border-b md:text-xl xl:text-2xl border-foreground/50">
             Work
           </h2>
-          <div className="relative grid w-full h-full gap-2">
+          <div className="relative grid w-full h-full gap-4 md:gap-8">
             {projects.map((project, index) => (
               <ProjectPreview
                 index={index + 1}

@@ -1,17 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { HomeIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { riseWithFade } from "@/components/motion";
 
-import Link from "@/components/ui/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ThemeToggler } from "@/components/ui/theme-toggler";
 
 import { navItems } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { HomeIcon } from "lucide-react";
 
 export function Navbar() {
   const pathname = usePathname();
