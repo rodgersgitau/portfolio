@@ -4,8 +4,8 @@ import { ArrowRightIcon, MouseIcon } from "lucide-react";
 import Link from "@/components/ui/link";
 import { Button } from "@/components/ui/button";
 import Accordion from "@/components/ui/accordion";
-
 import ProjectPreview from "@/components/project-preview";
+import PageLayout from "@/components/layouts/page-layout";
 
 import { faqs } from "@/lib/data";
 
@@ -16,7 +16,7 @@ export default async function Page() {
   const projects = entries.filter((entry) => entry.isDirectory());
 
   return (
-    <div className="flex flex-grow w-full h-full py-10 md:py-16">
+    <PageLayout>
       <div className="grid flex-1 gap-10 md:gap-16">
         <section className="relative grid gap-4 h-full grid-cols-2 md:grid-cols-4 md:grid-rows-2 min-h-[60svh]">
           <div className="relative col-[1/-1] row-[1/-1] md:col-[1/3] self-end h-full">
@@ -105,6 +105,6 @@ export default async function Page() {
           </div>
         </section>
       </div>
-    </div>
+    </PageLayout>
   );
 }

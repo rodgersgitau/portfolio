@@ -1,40 +1,33 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { type ReactNode } from "react";
 
-import { motion } from "framer-motion";
-
-import { Navbar } from "@/components/nav";
-
-import { riseWithFade, staggerChildren } from "@/components/motion";
-import { cn } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
 
 export default function PageLayout({
+  aside,
   children,
   className,
 }: {
+  aside?: ReactNode;
   children: ReactNode;
   className?: string;
 }) {
   return (
-    <motion.main
-      initial={{ y: 100, opacity: 0 }}
-      animate={{
-        y: 0,
-        opacity: 1,
-        transition: {
-          duration: 0.8,
-          delay: 0.6,
-          type: "spring",
-          stiffness: 200,
-        },
-      }}
-      className={cn(
-        "relative flex-grow pt-20 pb-16 scroll-pt-20 scroll-pb-16",
-        "grid container w-full max-w-screen-xl mx-auto h-full text-shadow: 2px 3px 15px rgba(0,0,0,.15);"
+    <section className="flex flex-grow pt-10">
+      {aside ? (
+        <div className="relative flex flex-col-reverse flex-grow gap-8 md:flex-row">
+          <aside className="w-full h-full md:sticky md:h-max md:top-36 md:w-1/4">
+            {aside}
+          </aside>
+          <Separator className="w-full h-px md:w-px md:h-full" />
+          <section className="w-full h-full md:w-3/4 md:h-max">
+            {children}
+          </section>
+        </div>
+      ) : (
+        <section className="relative flex-grow">{children}</section>
       )}
-    >
-      {children}
-    </motion.main>
+    </section>
   );
 }
