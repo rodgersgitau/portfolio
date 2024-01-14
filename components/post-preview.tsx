@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { readFile } from "fs/promises";
 import matter from "gray-matter";
+import { readFile } from "fs/promises";
 
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,

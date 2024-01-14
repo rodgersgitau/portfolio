@@ -1,8 +1,10 @@
 import Image from "next/image";
 
-import { faqs, workExperiences } from "@/lib/data";
-import Accordion from "@/components/ui/accordion";
 import { sortDates } from "@/lib/utils";
+import { faqs, workExperiences } from "@/lib/data";
+
+import Accordion from "@/components/ui/accordion";
+import PageLayout from "@/components/layouts/page-layout";
 
 // child components
 import Bio from "./bio";
@@ -10,7 +12,7 @@ import WorkExperience from "./work-experience";
 
 export default function About() {
   return (
-    <div className="flex-grow w-full h-full">
+    <PageLayout>
       <div className="relative grid gap-10 md:gap-16">
         {/* Bio */}
         <section className="flex flex-col-reverse gap-10 md:gap-16 md:flex-row md:min-h-[40svh] items-start pt-8 lg:pt-10">
@@ -90,6 +92,6 @@ export default function About() {
           </div>
         </section>
       </div>
-    </div>
+    </PageLayout>
   );
 }

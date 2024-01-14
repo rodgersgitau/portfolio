@@ -1,8 +1,10 @@
 import { readFile, readdir } from "fs/promises";
 import matter from "gray-matter";
 
-import { CustomMDX } from "@/components/mdx";
-import { getFormatedDate, parseDate } from "@/lib/utils";
+import { CustomMDX } from "@/components/markdown/mdx";
+import PageLayout from "@/components/layouts/page-layout";
+
+import { parseDate } from "@/lib/utils";
 
 interface Props {
   params: { slug: string };
@@ -16,20 +18,22 @@ export default async function Project({ params }: Props) {
   const { data: metadata, content } = matter(fileContent);
 
   return (
-    <article className="grid flex-grow gap-8 max-w-screen-2xl mx-auto">
-      <h1 className="text-lg font-medium !leading-snug tracking-tight md:text-2xl xl:text-3xl md:tracking-wide">
-        {metadata.title}
-      </h1>
+    <PageLayout>
+      <article className="grid flex-grow gap-8 mx-auto max-w-screen-2xl">
+        <h1 className="text-lg font-medium !leading-snug tracking-tight md:text-2xl xl:text-3xl md:tracking-wide">
+          {metadata.title}
+        </h1>
 
-      <div className="flex items-center justify-between text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {parseDate(new Date(metadata.date))}
-        </p>
-      </div>
-      <div className="max-w-full prose 2xl:prose-lg prose-quoteless prose-neutral dark:prose-invert prose-headings:text-lg xl:prose-headings:text-xl">
-        <CustomMDX source={content} />
-      </div>
-    </article>
+        <div className="flex items-center justify-between text-sm">
+          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            {parseDate(new Date(metadata.date))}
+          </p>
+        </div>
+        <div className="max-w-full prose 2xl:prose-lg prose-quoteless prose-neutral dark:prose-invert prose-headings:text-lg xl:prose-headings:text-xl">
+          <CustomMDX source={content} />
+        </div>
+      </article>
+    </PageLayout>
   );
 }
 
