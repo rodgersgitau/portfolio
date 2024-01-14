@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { motion } from "framer-motion";
 
-import { dropWithFade } from "@/components/motion";
 import useMousePosition from "@/hooks/useMousePosition";
 
 export default function Backdrop() {
@@ -16,7 +14,6 @@ export default function Backdrop() {
     <motion.div
       initial="initial"
       animate="animate"
-      variants={dropWithFade}
       className="fixed inset-0 cursor-pointer -z-50 blur-2xl"
     >
       <Image

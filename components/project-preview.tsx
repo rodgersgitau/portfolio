@@ -1,17 +1,7 @@
-import Link from "next/link";
-import { readFile } from "fs/promises";
 import matter from "gray-matter";
+import { readFile } from "fs/promises";
 
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import ProjectCard from "@/components/ui/project-card";
+import ProjectCard from "@/components/project-card";
 
 interface Props {
   index?: number;

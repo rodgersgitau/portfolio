@@ -8,7 +8,7 @@ const nextConfig = {
     useLightningcss: false,
   },
 
-  pageExtensions: ['md', 'tsx', 'ts', 'jsx', 'js', 'md', 'mdx'],
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js', 'md', 'mdx'],
 
   async redirects() {
     const redirects = [

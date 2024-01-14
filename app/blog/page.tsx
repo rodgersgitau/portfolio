@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { readdir } from "fs/promises";
 
 import PostPreview from "@/components/post-preview";
+import PageLayout from "@/components/layouts/page-layout";
 
 export const metadata = {
   title: "Blog",
@@ -13,8 +14,8 @@ export default async function BlogList() {
   const blogs = entries.filter((entry) => entry.isDirectory());
 
   return (
-    <div className="flex-grow w-full h-full">
-      <div className="relative grid gap-10">
+    <PageLayout>
+      <div className="grid flex-1 gap-10 md:gap-16">
         <section className="flex flex-col gap-10 md:gap-16 md:min-h-[75dvh]">
           <h1 className="py-4 text-lg font-black leading-loose tracking-tight border-b-2 md:text-xl xl:text-2xl md:tracking-wide">
             Blog
@@ -28,6 +29,6 @@ export default async function BlogList() {
           </Suspense>
         </section>
       </div>
-    </div>
+    </PageLayout>
   );
 }

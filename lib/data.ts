@@ -12,11 +12,11 @@ export const navItems = {
   "/blog": {
     name: "blog",
   },
-  "/play": {
-    name: "play",
+  "/lab": {
+    name: "lab",
   },
-  "/guestbook": {
-    name: "guestbook",
+  "/contact": {
+    name: "enquiries",
   },
 };
 
