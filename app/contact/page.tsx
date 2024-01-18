@@ -13,59 +13,34 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export default function ContactPage() {
   return (
     <PageLayout
-    // aside={
-    //   <TestimonyList
-    //     testimonials={[
-    //       {
-    //         stars: 5.5,
-    //         name: "Marija Rucevska",
-    //         message:
-    //           "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing to take an extra mile.",
-    //         roles: [
-    //           "Co-founder at Helve",
-    //           "Venture Partner at Practica Capital",
-    //         ],
-    //       },
-    //       {
-    //         stars: 4.5,
-    //         name: "Victor Rucevska",
-    //         message:
-    //           "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing     // aside={
-    //   <TestimonyList
-    //     testimonials={[
-    //       {
-    //         stars: 5.5,
-    //         name: "Marija Rucevska",
-    //         message:
-    //           "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing to take an extra mile.",
-    //         roles: [
-    //           "Co-founder at Helve",
-    //           "Venture Partner at Practica Capital",
-    //         ],
-    //       },
-    //       {
-    //         stars: 4.5,
-    //         name: "Victor Rucevska",
-    //         message:
-    //           "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing to take an extra mile.",
-    //         roles: [
-    //           "Co-founder at Helve",
-    //           "Venture Partner at Practica Capital",
-    //         ],
-    //       },
-    //     ]}
-    //   />
-    // }to take an extra mile.",
-    //         roles: [
-    //           "Co-founder at Helve",
-    //           "Venture Partner at Practica Capital",
-    //         ],
-    //       },
-    //     ]}
-    //   />
-    // }
+      aside={
+        <TestimonyList
+          testimonials={[
+            {
+              stars: 5.5,
+              name: "Marija Rucevska",
+              message:
+                "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing to take an extra mile.",
+              roles: [
+                "Co-founder at Helve",
+                "Venture Partner at Practica Capital",
+              ],
+            },
+            {
+              stars: 4.5,
+              name: "Victor Rucevska",
+              message:
+                "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing to take an extra mile.",
+              roles: [
+                "Co-founder at Helve",
+                "Venture Partner at Practica Capital",
+              ],
+            },
+          ]}
+        />
+      }
     >
-      <div className="flex flex-col gap-8 md:w-3/4">
+      <div className="flex flex-col gap-8">
         <h1 className="text-xl font-black md:text-2xl">Enquiries</h1>
         <Separator />
         <Tabs defaultValue="product" className="flex-1 p-0 py-2 space-y-8">
