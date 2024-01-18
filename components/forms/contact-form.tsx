@@ -31,9 +31,6 @@ const FormSchema = z.object({
   email: z.string().email({
     message: "Email must be a valid email address.",
   }),
-  location: z.string().min(8, {
-    message: "Location must be at least 8 characters.",
-  }),
   message: z.string().min(20, {
     message: "Message details must be at least 20 characters.",
   }),
@@ -47,7 +44,6 @@ export default function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      location: "",
       message: "",
       referrer: "",
     },
@@ -96,19 +92,6 @@ export default function ContactForm() {
                   type="email"
                   {...field}
                 />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="location"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Where are you based?</FormLabel>
-              <FormControl>
-                <Input placeholder="Nairobi, Kenya" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
