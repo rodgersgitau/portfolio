@@ -45,13 +45,6 @@ interface TestimonialType {
 
 function Testimonial({ roles, message, name, stars }: TestimonialType) {
   const starCount = stars > 5 ? 5 : stars < 1 ? 1 : Math.floor(Math.abs(stars));
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      console.log({ roles, stars });
-    }
-  }, []);
-
   return (
     <Card className="w-full text-sm aspect-1">
       <CardHeader>
