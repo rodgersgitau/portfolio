@@ -46,7 +46,7 @@ interface TestimonialType {
 function Testimonial({ roles, message, name, stars }: TestimonialType) {
   const starCount = stars > 5 ? 5 : stars < 1 ? 1 : Math.floor(Math.abs(stars));
   return (
-    <Card className="w-full text-sm aspect-1">
+    <Card className="w-full text-sm min-h-36">
       <CardHeader>
         <CardTitle>
           <div className="flex gap-0">
