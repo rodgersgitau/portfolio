@@ -1,16 +1,14 @@
 import Image from "next/image";
 
-import { sortDates } from "@/lib/utils";
-import { faqs, workExperiences } from "@/lib/data";
-
-import Accordion from "@/components/ui/accordion";
+import Bio from "@/components/bio";
 import PageLayout from "@/components/layouts/page-layout";
+import Accordion from "@/components/ui/accordion";
+import WorkExperience from "@/components/work-experience";
 
-// child components
-import Bio from "./bio";
-import WorkExperience from "./work-experience";
+import { faqs, workExperiences } from "@/lib/data";
+import { sortDates } from "@/lib/utils";
 
-export default function About() {
+export default async function About() {
   return (
     <PageLayout>
       <div className="relative grid gap-10 md:gap-16">
@@ -50,6 +48,7 @@ export default function About() {
                 <WorkExperience
                   index={index}
                   work={work}
+                  className="max-w-full"
                   key={`work-${index * Math.random()}`}
                 />
               ))}
@@ -68,24 +67,8 @@ export default function About() {
                 title={faq.question}
                 key={`faq-${faq.question}`}
               >
-                <div className="grid max-w-screen-xl gap-1.5 leading-loose tracking-tight prose dark:prose-invert md:tracking-wide text-foreground">
-                  <span className="sr-only">{faq.answer}</span>
-                  <ul>
-                    {faq.answer.split(".").map((word, idx) => {
-                      if (word === "") {
-                        return;
-                      }
-                      return (
-                        <li
-                          key={`word-${idx}`}
-                          className="max-w-[90ch] m-0 text-pretty"
-                        >
-                          <span>{word}</span>
-                          <span>.</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
+                <div className="flex items-center max-w-screen-xl leading-loose tracking-tight prose dark:prose-invert md:tracking-wide text-foreground">
+                  {faq.answer}
                 </div>
               </Accordion>
             ))}

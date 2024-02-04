@@ -1,38 +1,38 @@
 import NextLink from "next/link";
-import type { ComponentProps } from "react";
+import type { AnchorHTMLAttributes, ComponentProps, ReactNode } from "react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { VariantProps } from "class-variance-authority";
 
 type NextLinkProps = ComponentProps<typeof NextLink>;
-export type LinkProps = NextLinkProps & {
+export interface LinkProps
+  extends AnchorHTMLAttributes<HTMLAnchorElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
   external?: boolean;
   href: string;
-  title?: string;
-  children: React.ReactNode;
-  className?: string;
   underline?: boolean;
   tabIndex?: number;
-};
+}
 
 const Link = ({
   external,
-  href,
-  children,
   className,
-  title,
-  underline = false,
+  children,
   tabIndex = 0,
+  underline = false,
+  variant = "link",
   ...props
 }: LinkProps) => {
   if (external) {
     return (
       <a
-        href={href}
+        {...props}
         target="_blank"
         rel="noopener noreferrer"
         className={buttonVariants({
-          variant: "link",
+          variant,
           className: cn(
             `${
               underline
@@ -42,7 +42,6 @@ const Link = ({
             className
           ),
         })}
-        title={title}
         tabIndex={tabIndex}
         {...props}
       >
@@ -53,10 +52,9 @@ const Link = ({
 
   return (
     <NextLink
-      href={href}
-      title={title}
+      {...props}
       className={buttonVariants({
-        variant: "link",
+        variant,
         className: cn(
           `${
             underline
