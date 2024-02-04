@@ -15,28 +15,8 @@ export default function ContactPage() {
     <PageLayout
       aside={
         <TestimonyList
-          testimonials={[
-            {
-              stars: 5.5,
-              name: "Marija Rucevska",
-              message:
-                "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing to take an extra mile.",
-              roles: [
-                "Co-founder at Helve",
-                "Venture Partner at Practica Capital",
-              ],
-            },
-            {
-              stars: 4.5,
-              name: "Victor Rucevska",
-              message:
-                "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing to take an extra mile.",
-              roles: [
-                "Co-founder at Helve",
-                "Venture Partner at Practica Capital",
-              ],
-            },
-          ]}
+          orientation="vertical"
+          className="flex flex-col w-full gap-8"
         />
       }
     >
