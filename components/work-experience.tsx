@@ -6,16 +6,18 @@ import { cn, getDuration, parseDate } from "@/lib/utils";
 interface Props {
   work: any;
   index: number;
+  className?: string;
 }
 
-export default function WorkExperience({ work, index }: Props) {
+export default function WorkExperience({ work, index, className }: Props) {
   return (
     <div
       key={`work-${index * Math.random()}`}
       className={cn(
         "border-2 rounded-lg  border-foreground/20 bg-background",
         "prose prose-neutral dark:prose-invert prose-ul:text-foreground",
-        "relative flex-1 grid gap-2 p-6 lg:p-8 max-w-full"
+        "relative flex flex-col gap-4 p-6 lg:p-8 shrink-0 max-w-md",
+        className
       )}
     >
       <div className="absolute top-4 right-4 w-28 aspect-3 hidden lg:flex items-center justify-center">
@@ -40,29 +42,23 @@ export default function WorkExperience({ work, index }: Props) {
         <span className="flex items-center gap-1 lg:ml-auto text-sm w-max">
           <span>{parseDate(work.startDate)}</span>
           <span>-</span>
-          <span>
-            {work.endDate
-              ? `${parseDate(work.endDate)} ${getDuration(
-                  work.startDate.toString(),
-                  work.endDate.toString()
-                )}`
-              : "Current"}
-          </span>
+          <span>{work.endDate ? `${parseDate(work.endDate)}` : "Current"}</span>
           <span></span>
         </span>
       </div>
-      <hr className="my-3" />
-      {work.description && <p className="text-sm">{work.description}</p>}
-      <ul className="!m-0 !py-0 text-sm !list-disk">
-        <li>
-          On the frontend, I led our move from a custom webpack and React
-          configuration to Next.js and the latest React patterns.
-        </li>
-        <li>
-          In the process, I shared my learnings online, helping educate members
-          of the React and Next.js community by creating courses.
-        </li>
-      </ul>
+      <div className="grid gap-4 items-center text-pretty">
+        {work.description && <div className="text-sm">{work.description}</div>}
+        <ul className="!m-0 !py-0 w-full text-sm !list-disk">
+          <li>
+            On the frontend, I led our move from a custom webpack and React
+            configuration to Next.js and the latest React patterns.
+          </li>
+          <li>
+            In the process, I shared my learnings online, helping educate
+            members of the React and Next.js community by creating courses.
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
