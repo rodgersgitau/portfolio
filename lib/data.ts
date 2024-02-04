@@ -1,22 +1,22 @@
 import { differenceInYears } from "date-fns";
 
-import type { FAQType, GraphicType, PostType, ProjectType } from "@/lib/types";
+import type {
+  FAQType,
+  GraphicType,
+  PostType,
+  ProjectType,
+  TestimonialType,
+} from "@/lib/types";
 
 export const navItems = {
-  "/about": {
-    name: "about",
+  "/blog": {
+    name: "blog",
   },
   "/work": {
     name: "work",
   },
-  "/blog": {
-    name: "blog",
-  },
-  "/lab": {
-    name: "lab",
-  },
   "/contact": {
-    name: "enquiries",
+    name: "contact",
   },
 };
 
@@ -102,131 +102,155 @@ export const faqs: FAQType[] = [
   },
 ];
 
-export const projects: ProjectType[] = [
+export const testimonials: TestimonialType[] = [
   {
-    name: "Bantu: UI Design System",
-    link: "https://demo.rgitau.dev/bantu-design-system",
-    description: "An opionionated UI Kit for modern web applications.",
-    techStack: ["Svelte", "TailwindCSS", "RadixUI"],
-    images: [
-      "/images/ostroffe-butchery/homepage.png",
-      "/images/ostroffe-butchery/categories.png",
-      "/images/ostroffe-butchery/itempage.png",
-      "/images/ostroffe-butchery/cartpage.png",
-      "/images/ostroffe-butchery/alert.png",
-    ],
+    stars: 5.0,
+    name: "Stephen Ndambuki",
+    message:
+      "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing to take an extra mile.",
+    roles: ["Co-founder at Helve", "Venture Partner at Practica Capital"],
   },
   {
-    name: "LoreCMS: Jamstack CMS",
-    link: "https://demo.rgitau.dev/lore-cms",
-    description:
-      "An opionionated content management system for modern web applications.",
-    techStack: ["React", "Stripe", "TailwindCSS", "RadixUI"],
-    images: [
-      "/images/ostroffe-butchery/categories.png",
-      "/images/ostroffe-butchery/itempage.png",
-      "/images/ostroffe-butchery/cartpage.png",
-      "/images/ostroffe-butchery/alert.png",
-    ],
+    stars: 4.5,
+    name: "Victor Rucevska",
+    message:
+      "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing to take an extra mile.",
+    roles: ["Co-founder at Helve", "Venture Partner at Practica Capital"],
   },
   {
-    name: "HR Mastery: TRM Platform ",
-    link: "https://demo.rgitau.dev/hr-mastery",
-    description:
-      "An all-in-one talent & relationship management platform from strategic recruitment to succession workflows.",
-    techStack: ["React", "Stripe", "TailwindCSS", "Google Maps"],
-    images: [
-      "/images/ostroffe-butchery/itempage.png",
-      "/images/ostroffe-butchery/cartpage.png",
-      "/images/ostroffe-butchery/alert.png",
-    ],
-  },
-  {
-    name: "Ostroffe: E-commerce Template",
-    link: "https://demo.rgitau.dev/wholelife",
-    description:
-      "An ecommerce for a local butchery. Includes an admin panel for authorized editing of products, categories, prices & stock keeping.",
-    techStack: ["NextJS", "React", "Stripe", "TailwindCSS"],
-    images: [
-      "/images/ostroffe-butchery/cartpage.png",
-      "/images/ostroffe-butchery/alert.png",
-    ],
-  },
-  {
-    name: "Propertias: Real Estate Template",
-    link: "https://demo.rgitau.dev/wholelife",
-    description:
-      "A web application for local land retailer. Includes an admin panel for authorized editing of blogs, commments, products, prices & personnel.",
-    techStack: ["React", "Stripe", "ThreeJS", "TailwindCSS", "Google Maps"],
-    images: [
-      "/images/propertias/homepage.png",
-      "/images/propertias/homepage-end.png",
-      "/images/propertias/homepage-dark.png",
-      "/images/propertias/homepage-dark-end.png",
-    ],
-  },
-  {
-    name: "Wholelife: Project & Task Management System",
-    link: "https://demo.rgitau.dev/wholelife",
-    description:
-      "A task management web application. Includes an admin panel for authorized editing of projects, tasks, subtasks & personnel.",
-    techStack: ["React", "Stripe", "BootstrapUI", "ExpressJS"],
-    images: [
-      "/images/ostroffe-butchery/homepage.png",
-      "/images/ostroffe-butchery/categories.png",
-      "/images/ostroffe-butchery/itempage.png",
-      "/images/ostroffe-butchery/cartpage.png",
-      "/images/ostroffe-butchery/alert.png",
-    ],
+    stars: 4.5,
+    name: "Victor Rucevska",
+    message:
+      "Gitau has strong professional ethics when it comes to working and delivering the best possible outcome for his clients. Always great in communication and willing to take an extra mile.",
+    roles: ["Co-founder at Helve", "Venture Partner at Practica Capital"],
   },
 ];
 
-export const vEffects: GraphicType[] = [
-  {
-    name: "Stack It",
-    link: "https://stack-it.netlify.app/",
-    image: "/images/play/stack-it.png",
-    repository: "https://github.com/rodgersgitau/labs/tree/master/block-break",
-    description: "A block stacking game akin to digital Jenga",
-  },
-  {
-    name: "Matrix Digital Rain",
-    link: "https://matrixdigitalrain.netlify.app/",
-    image: "/images/play/matrix-digital-rain.png",
-    repository: "https://github.com/rodgersgitau/labs/tree/master/matrix-rain",
-    description:
-      "Ever watched these cult favourite movies? This is the opening sequence",
-  },
-  {
-    name: "Block Breaker",
-    link: "https://block-breaker.netlify.app",
-    image: "/images/play/block-break.png",
-    repository: "https://github.com/rodgersgitau/labs/tree/master/block-break",
-    description: "A clone of the popular block breaking game",
-  },
-  {
-    name: "Tetris",
-    link: "https://tetricks.netlify.app",
-    image: "/images/play/tetris.png",
-    repository: "https://github.com/rodgersgitau/labs/tree/master/tetris",
-    description:
-      "A clone of the famous stacking game for different sized block shapes",
-  },
-  {
-    name: "Noughts & Crosses",
-    link: "https://clone-tictactoe.netlify.app",
-    image: "/images/play/tictactoe.png",
-    repository:
-      "https://github.com/rodgersgitau/labs/tree/master/noughts-and-crosses",
-    description: "The classic game also known as tictactoe",
-  },
-  {
-    name: "Monopoly",
-    image: "/images/play/virtual-monopoly.png",
-    repository: "https://github.com//rodgersgitau/labs/tree/master/monopoly",
-    description: "The classic board game reimagined",
-  },
-];
+// export const projects: ProjectType[] = [
+//   {
+//     name: "Bantu: UI Design System",
+//     link: "https://demo.rgitau.dev/bantu-design-system",
+//     description: "An opionionated UI Kit for modern web applications.",
+//     techStack: ["Svelte", "TailwindCSS", "RadixUI"],
+//     images: [
+//       "/images/ostroffe-butchery/homepage.png",
+//       "/images/ostroffe-butchery/categories.png",
+//       "/images/ostroffe-butchery/itempage.png",
+//       "/images/ostroffe-butchery/cartpage.png",
+//       "/images/ostroffe-butchery/alert.png",
+//     ],
+//   },
+//   {
+//     name: "LoreCMS: Jamstack CMS",
+//     link: "https://demo.rgitau.dev/lore-cms",
+//     description:
+//       "An opionionated content management system for modern web applications.",
+//     techStack: ["React", "Stripe", "TailwindCSS", "RadixUI"],
+//     images: [
+//       "/images/ostroffe-butchery/categories.png",
+//       "/images/ostroffe-butchery/itempage.png",
+//       "/images/ostroffe-butchery/cartpage.png",
+//       "/images/ostroffe-butchery/alert.png",
+//     ],
+//   },
+//   {
+//     name: "HR Mastery: TRM Platform ",
+//     link: "https://demo.rgitau.dev/hr-mastery",
+//     description:
+//       "An all-in-one talent & relationship management platform from strategic recruitment to succession workflows.",
+//     techStack: ["React", "Stripe", "TailwindCSS", "Google Maps"],
+//     images: [
+//       "/images/ostroffe-butchery/itempage.png",
+//       "/images/ostroffe-butchery/cartpage.png",
+//       "/images/ostroffe-butchery/alert.png",
+//     ],
+//   },
+//   {
+//     name: "Ostroffe: E-commerce Template",
+//     link: "https://demo.rgitau.dev/wholelife",
+//     description:
+//       "An ecommerce for a local butchery. Includes an admin panel for authorized editing of products, categories, prices & stock keeping.",
+//     techStack: ["NextJS", "React", "Stripe", "TailwindCSS"],
+//     images: [
+//       "/images/ostroffe-butchery/cartpage.png",
+//       "/images/ostroffe-butchery/alert.png",
+//     ],
+//   },
+//   {
+//     name: "Propertias: Real Estate Template",
+//     link: "https://demo.rgitau.dev/wholelife",
+//     description:
+//       "A web application for local land retailer. Includes an admin panel for authorized editing of blogs, commments, products, prices & personnel.",
+//     techStack: ["React", "Stripe", "ThreeJS", "TailwindCSS", "Google Maps"],
+//     images: [
+//       "/images/propertias/homepage.png",
+//       "/images/propertias/homepage-end.png",
+//       "/images/propertias/homepage-dark.png",
+//       "/images/propertias/homepage-dark-end.png",
+//     ],
+//   },
+//   {
+//     name: "Wholelife: Project & Task Management System",
+//     link: "https://demo.rgitau.dev/wholelife",
+//     description:
+//       "A task management web application. Includes an admin panel for authorized editing of projects, tasks, subtasks & personnel.",
+//     techStack: ["React", "Stripe", "BootstrapUI", "ExpressJS"],
+//     images: [
+//       "/images/ostroffe-butchery/homepage.png",
+//       "/images/ostroffe-butchery/categories.png",
+//       "/images/ostroffe-butchery/itempage.png",
+//       "/images/ostroffe-butchery/cartpage.png",
+//       "/images/ostroffe-butchery/alert.png",
+//     ],
+//   },
+// ];
+
+// export const vEffects: GraphicType[] = [
+//   {
+//     name: "Stack It",
+//     link: "https://stack-it.netlify.app/",
+//     image: "/images/play/stack-it.png",
+//     repository: "https://github.com/rodgersgitau/labs/tree/master/block-break",
+//     description: "A block stacking game akin to digital Jenga",
+//   },
+//   {
+//     name: "Matrix Digital Rain",
+//     link: "https://matrixdigitalrain.netlify.app/",
+//     image: "/images/play/matrix-digital-rain.png",
+//     repository: "https://github.com/rodgersgitau/labs/tree/master/matrix-rain",
+//     description:
+//       "Ever watched these cult favourite movies? This is the opening sequence",
+//   },
+//   {
+//     name: "Block Breaker",
+//     link: "https://block-breaker.netlify.app",
+//     image: "/images/play/block-break.png",
+//     repository: "https://github.com/rodgersgitau/labs/tree/master/block-break",
+//     description: "A clone of the popular block breaking game",
+//   },
+//   {
+//     name: "Tetris",
+//     link: "https://tetricks.netlify.app",
+//     image: "/images/play/tetris.png",
+//     repository: "https://github.com/rodgersgitau/labs/tree/master/tetris",
+//     description:
+//       "A clone of the famous stacking game for different sized block shapes",
+//   },
+//   {
+//     name: "Noughts & Crosses",
+//     link: "https://clone-tictactoe.netlify.app",
+//     image: "/images/play/tictactoe.png",
+//     repository:
+//       "https://github.com/rodgersgitau/labs/tree/master/noughts-and-crosses",
+//     description: "The classic game also known as tictactoe",
+//   },
+//   {
+//     name: "Monopoly",
+//     image: "/images/play/virtual-monopoly.png",
+//     repository: "https://github.com//rodgersgitau/labs/tree/master/monopoly",
+//     description: "The classic board game reimagined",
+//   },
+// ];
 
 export const thirdPartyPosts: PostType[] = [
   {
