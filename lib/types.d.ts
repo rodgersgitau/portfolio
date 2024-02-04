@@ -43,3 +43,10 @@ export type ProjectType = {
   role?: string;
   stars?: number;
 };
+
+export interface TestimonialType {
+  stars: number;
+  name: string;
+  roles: string[];
+  message: string;
+}
