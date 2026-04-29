@@ -34,7 +34,7 @@
     "@vercel/speed-insights": "^0.0.5",
     "autoprefixer": "^10.4.16",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "critters": "^0.0.20",
     "date-fns": "^3.2.0",
     "date-fns-tz": "^2.0.0",
